@@ -1,0 +1,132 @@
+---
+import { Image } from 'astro:assets';
+import circleDraw from '../assets/circle-draw.svg';
+---
+
+<section id='about' class='py-[120px] max-container space-y-[60px]'>
+  <!-- Introduction header -->
+  <div class='text-center'>
+    <h2 class='text-5xl md:text-[56px] font-normal h-[90px]'>
+      <span class='font-script relative z-10'>Let's me introduce myself</span>
+      <Image
+        src={circleDraw}
+        alt='circle draw'
+        class='relative left-[50%] top-[-46px] h-[46px] translate-x-[-50%]'
+        quality='high'
+      />
+    </h2>
+  </div>
+
+  <!-- Introduction content -->
+  <div class='grid grid-cols-9 gap-6 w-full max-w-[1200px] mx-auto px-6 lg:px-0'>
+    <!-- Card 1: INTRODUCE -->
+    <div class='intro-card col-span-9 md:col-span-5 min-h-[372px] justify-between flex flex-col items-start'>
+      <div class='flex justify-between items-start mb-8'>
+        <h3 class='text-[24px] font-bold font-script'>INTRODUCE</h3>
+      </div>
+      <div>
+        <p class='text-light'>
+          A UX/UI Designer with more than 2 years. Creative and detail-oriented UX/UI Designer with experience in
+          wireframing, prototyping, and usability testing to create intuitive and engaging interfaces. Strong in
+          combining analytical thinking with creativity to improve cross-platform user experiences. Collaborative team
+          player seeking a long-term UX/UI Designer opportunity.
+        </p>
+      </div>
+    </div>
+
+    <!-- Card 2: EDUCATION & EXPERIENCE-->
+    <div class='intro-card col-span-9 md:col-span-4 min-h-[372px] gap-10 flex flex-col items-start'>
+      <div>
+        <h3 class='text-[24px] font-bold font-script'>EDUCATION</h3>
+        <p class='text-sm text-black/60'>Multimedia and Entertainment Engineering - Bangkok University</p>
+      </div>
+      <div>
+        <h3 class='text-[24px] font-bold font-script'>EXPERIENCE</h3>
+        <p class='text-sm text-black/60'>Graphic Artist - Freelance</p>
+        <p class='text-sm text-black/60'>UI/UX Designer - Freelance</p>
+      </div>
+    </div>
+
+    <!-- Card 3: HARD SKILLS -->
+    <div class='intro-card col-span-9 md:col-span-3 min-h-[384px]'>
+      <div class='flex justify-between items-start mb-8'>
+        <h3 class='text-[24px] font-bold font-script'>HARD SKILLS</h3>
+      </div>
+      <div class='space-y-8'>CONTENT</div>
+    </div>
+
+    <!-- Card 4: TOOLS -->
+    <div class='intro-card col-span-9 md:col-span-3 min-h-[384px]'>
+      <h3 class='text-[24px] font-bold font-script mb-8'>TOOLS</h3>
+      <div class='grid grid-cols-3 gap-4'>
+        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
+          <img
+            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
+            class='w-8 h-8'
+            alt='Figma'
+          />
+        </div>
+        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
+          <img
+            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg'
+            class='w-8 h-8'
+            alt='Photoshop'
+          />
+        </div>
+        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
+          <img
+            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'
+            class='w-8 h-8'
+            alt='Illustrator'
+          />
+        </div>
+        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
+          <img
+            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+            class='w-8 h-8'
+            alt='React'
+          />
+        </div>
+        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
+          <img
+            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg'
+            class='w-8 h-8'
+            alt='JS'
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: SOFT SKILLS -->
+    <div class='intro-card col-span-9 md:col-span-3 min-h-[384px]'>
+      <div class='flex justify-between items-start mb-8'>
+        <h3 class='text-[24px] font-bold font-script'>SOFT SKILLS</h3>
+      </div>
+      <div class='space-y-8'>CONTENT</div>
+    </div>
+  </div>
+
+  <!-- Introduction footer -->
+  <div class='py-20 flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto'>
+    <div class='text-teal-400'>
+      <svg width='48' height='48' viewBox='0 0 24 24' fill='currentColor'>
+        <path
+          d='M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V3L14.017 3C15.1216 3 16.017 3.89543 16.017 5V6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 16.6569 20.6739 18 19.017 18H17.017V21L14.017 21ZM2 21L2 18C2 16.8954 2.89543 16 4 16H7C7.55228 16 8 15.5523 8 15V9C8 8.44772 7.55228 8 7 8H4C2.89543 8 2 7.10457 2 6V3L2 3C3.10457 3 4 3.89543 4 5V6H7C8.65685 6 10 7.34315 10 9V15C10 16.6569 8.65685 18 7 18H5V21L2 21Z'
+        ></path>
+      </svg>
+    </div>
+    <p class='text-2xl font-medium leading-relaxed italic'>
+      "A UI/UX Designer with more than 2 years creative and detail-oriented UI/UX Designer with experience in
+      wireframing."
+    </p>
+    <div class='flex items-center space-x-4'>
+      <div class='w-12 h-12 rounded-full bg-black/10 overflow-hidden'>
+        <img src='https://api.dicebear.com/7.x/avataaars/svg?seed=Nanthakan' alt='Avatar' />
+      </div>
+      <div class='text-left'>
+        <div class='font-bold'>Nanthakan R.</div>
+        <div class='text-xs text-black/40'>UI/UX Designer</div>
+      </div>
+    </div>
+  </div>
+</section>

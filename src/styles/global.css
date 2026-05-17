@@ -1,0 +1,81 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand: #000000;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f5f5f5;
+  --color-text-muted: #666666;
+
+  --font-sans: 'Inter', 'Outfit', system-ui, sans-serif;
+  --font-script: 'Caveat', cursive;
+
+  --spacing-container: 2rem;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-surface text-brand font-sans antialiased overflow-x-hidden;
+    font-family: Inter;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+
+  .text-light {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #888888;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12 lg:px-24;
+  }
+
+  .max-container {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .mesh-gradient {
+    background-color: #ffffff;
+    background-image:
+      radial-gradient(at 0% 0%, hsla(180, 50%, 80%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(40, 60%, 85%, 1) 0, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(20, 70%, 90%, 1) 0, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(190, 40%, 85%, 1) 0, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  .intro-card {
+    @apply p-8;
+    background-color: #f3f3f3;
+    border-radius: 24px;
+  }
+}
+
+.page-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

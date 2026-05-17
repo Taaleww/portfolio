@@ -1,0 +1,43 @@
+---
+import { Image } from 'astro:assets';
+import bgHero from '../assets/bg-hero.jpg';
+import nameHero from '../assets/name-hero.svg';
+---
+
+<section class='relative min-h-screen flex flex-col justify-end px-[20px] lg:px-[40px] overflow-hidden'>
+  <!-- Background Image -->
+  <div class='absolute inset-0 -z-10 bg-white'>
+    <Image
+      src={bgHero}
+      alt='Hero Background'
+      class='w-full h-full object-cover scale-[1.5] absolute top-[20%] left-[25%]'
+      quality='high'
+    />
+    <!-- Optional: Gradient overlay to ensure text readability at the bottom -->
+    <div class='absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent'></div>
+  </div>
+  <div class='flex flex-col items-end mb-20 gap-[78px]'>
+    <div class='flex justify-end'>
+      <div class='flex flex-col space-y-2 text-left text-[18px] font-[400] text-black mr-[10dvw] font-script'>
+        <a href='#about' class='hover:text-black transition-colors'>UX/UI Designer</a>
+        <a href='#projects' class='hover:text-black transition-colors'>Wireframing & Prototyping</a>
+        <a href='#resume' class='hover:text-black transition-colors'>Design Skill</a>
+        <a href='#contact' class='hover:text-black transition-colors'>Basic Coding</a>
+      </div>
+    </div>
+    <div class='w-full items-start space-y-6'>
+      <div class='text-[18px] font-[400] text-black'>©2026</div>
+      <p class='text-[18px] font-[400] leading-[160%] text-black max-w-[620px]'>
+        Lorem ipsum dolor sit amet consectetur. Laoreet massa tellus vulputate aenean quam nunc nulla. Metus volutpat
+        orci scelerisque ipsum velit molestie varius. Fusce neque quis sem mus nibh nulla
+      </p>
+    </div>
+  </div>
+
+  <div class='page-fade-in relative'>
+    <Image src={nameHero} alt='Hero Title' class='w-full h-full object-cover' quality='high' />
+    <!-- <h1 class='text-[15vw] lg:text-[18vw] font-black leading-none tracking-tighter text-black select-none'>
+      Nanthakan R.
+    </h1> -->
+  </div>
+</section>
