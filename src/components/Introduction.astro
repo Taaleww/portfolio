@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import circleDraw from '../assets/circle-draw.svg';
+import profileIcon from '../assets/profile-icon.png';
 ---
 
 <section id='about' class='py-[120px] max-container space-y-[60px]'>
@@ -26,24 +27,62 @@ import circleDraw from '../assets/circle-draw.svg';
       </div>
       <div>
         <p class='text-light'>
-          A UX/UI Designer with more than 2 years. Creative and detail-oriented UX/UI Designer with experience in
-          wireframing, prototyping, and usability testing to create intuitive and engaging interfaces. Strong in
-          combining analytical thinking with creativity to improve cross-platform user experiences. Collaborative team
-          player seeking a long-term UX/UI Designer opportunity.
+          UX/UI Designer with 2+ years of experience designing user-centered digital products across web and mobile
+          platforms. Skilled in translating user insights and business requirements into intuitive, scalable design
+          solutions through wireframing, prototyping, and usability testing. Strong collaborator experienced in working
+          with cross-functional teams to deliver high-quality, development-ready designs.
         </p>
+
+        <!-- Mini profile badge -->
+        <div class='mt-[20px]'>
+          <div class='flex items-center gap-4'>
+            <div class='rounded-full'>
+              <Image src={profileIcon} alt='profile icon' class='h-[56px] w-[56px]' quality='high' />
+            </div>
+            <div>
+              <p class='text-[18px] text-black leading-[29px]'>Nanthakan Rujilakhanon</p>
+              <p class='text-[14px] text-light leading-[20px]'>UX/UI Designer</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Card 2: EDUCATION & EXPERIENCE-->
     <div class='intro-card col-span-9 md:col-span-4 min-h-[372px] gap-10 flex flex-col items-start'>
-      <div>
+      <div class='w-full flex flex-col gap-4'>
         <h3 class='text-[24px] font-bold font-script'>EDUCATION</h3>
-        <p class='text-sm text-black/60'>Multimedia and Entertainment Engineering - Bangkok University</p>
+
+        <!-- Education -->
+        <div class='w-full'>
+          <div class='flex flex-row items-start justify-between w-full'>
+            <p class='text-[16px] text-black font-[500] leading-[22px]'>Bachelor of Computer Engineering</p>
+            <span class='text-xs text-light leading-[20px]'>August 2019 - May 2023</span>
+          </div>
+          <p class='text-xs text-light leading-[20px] max-w-[50%]'>King Mongkut's University of Technology Thonburi</p>
+        </div>
       </div>
-      <div>
+
+      <div class='w-full flex flex-col gap-4'>
         <h3 class='text-[24px] font-bold font-script'>EXPERIENCE</h3>
-        <p class='text-sm text-black/60'>Graphic Artist - Freelance</p>
-        <p class='text-sm text-black/60'>UI/UX Designer - Freelance</p>
+
+        <!-- Experience 1 -->
+        <div class='w-full'>
+          <div class='flex flex-row items-start justify-between w-full'>
+            <p class='text-[16px] text-black font-[500] leading-[22px]'>CalCal Co., Ltd.</p>
+            <span class='text-xs text-light leading-[20px]'>June 2022 - August 2022</span>
+          </div>
+          <p class='text-xs text-light leading-[20px]'>UX/UI Designer (Internship)</p>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class='w-full'>
+          <div class='flex flex-row items-start justify-between w-full'>
+            <p class='text-[16px] text-black font-[500] leading-[22px]'>Geminine Studio</p>
+            <span class='text-xs text-light leading-[20px]'>August 2023 - Present</span>
+          </div>
+          <p class='text-xs text-light leading-[20px]'>UX/UI Designer (Full time)</p>
+        </div>
       </div>
     </div>
 
@@ -107,7 +146,7 @@ import circleDraw from '../assets/circle-draw.svg';
   </div>
 
   <!-- Introduction footer -->
-  <div class='py-20 flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto'>
+  <!-- <div class='py-20 flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto'>
     <div class='text-teal-400'>
       <svg width='48' height='48' viewBox='0 0 24 24' fill='currentColor'>
         <path
@@ -128,5 +167,5 @@ import circleDraw from '../assets/circle-draw.svg';
         <div class='text-xs text-black/40'>UI/UX Designer</div>
       </div>
     </div>
-  </div>
+  </div> -->
 </section>
