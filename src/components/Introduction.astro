@@ -2,19 +2,59 @@
 import { Image } from 'astro:assets';
 import circleDraw from '../assets/circle-draw.svg';
 import profileIcon from '../assets/profile-icon.png';
+import toolFigma from '../assets/tool-logo/figma.png';
+import toolPhotoshop from '../assets/tool-logo/photo-shop.png';
+import toolIllustrator from '../assets/tool-logo/illustrator.png';
+import toolGemini from '../assets/tool-logo/gemini.png';
+import toolGpt from '../assets/tool-logo/gpt.png';
+
+const pillColors = [
+  'rgba(243, 216, 145, 1)',
+  'rgba(243, 185, 78, 1)',
+  'rgba(138, 226, 230, 0.98)',
+  'rgba(209, 223, 183, 1)',
+  'rgba(212, 224, 212, 1)',
+];
+
+const HARD_SKILL = [
+  'UX/UI Design Process',
+  'Graphic Design',
+  'Wireframing & Prototyping',
+  'Basic Coding',
+  'Design Skill',
+];
+
+const SOFT_SKILL = ['Collaborative & Teamwork', 'Learning & Adaptability', 'Management'];
+
+const TOOLS = [
+  { name: 'Figma', icon: toolFigma, imgClass: 'w-full h-full scale-[1.3] object-cover' },
+  { name: 'Photoshop', icon: toolPhotoshop, imgClass: 'w-full h-full object-cover rounded-xl' },
+  { name: 'Illustrator', icon: toolIllustrator, imgClass: 'w-full h-full object-cover rounded-xl' },
+  { name: 'Gemini', icon: toolGemini, imgClass: 'w-[42px] h-[42px] object-contain' },
+  { name: 'ChatGPT', icon: toolGpt, imgClass: 'w-full h-full object-cover rounded-xl' },
+];
+
+const PILL_STYLE =
+  'text-black px-5 py-2.5 rounded-full font-medium text-[15px] whitespace-nowrap cursor-grab active:cursor-grabbing border-2 border-white shadow-sm pointer-events-auto select-none';
 ---
 
 <section id='about' class='py-[120px] max-container space-y-[60px]'>
   <!-- Introduction header -->
   <div class='text-center'>
     <h2 class='text-5xl md:text-[56px] font-normal h-[90px]'>
-      <span class='font-script relative z-10'>Let's me introduce myself</span>
-      <Image
-        src={circleDraw}
-        alt='circle draw'
-        class='relative left-[50%] top-[-46px] h-[46px] translate-x-[-50%]'
-        quality='high'
-      />
+      <span class='font-script relative z-10'>
+        Let's me
+        <span class='relative inline-block mx-1'>
+          <span class='relative z-10'>introduce</span>
+          <Image
+            src={circleDraw}
+            alt='circle draw'
+            class='absolute top-[60%] left-1/2 w-[115%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none'
+            quality='high'
+          />
+        </span>
+        myself
+      </span>
     </h2>
   </div>
 
@@ -87,85 +127,231 @@ import profileIcon from '../assets/profile-icon.png';
     </div>
 
     <!-- Card 3: HARD SKILLS -->
-    <div class='intro-card col-span-9 md:col-span-3 min-h-[384px]'>
-      <div class='flex justify-between items-start mb-8'>
+    <div
+      id='hard-skills-card'
+      class='intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden'
+    >
+      <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
         <h3 class='text-[24px] font-bold font-script'>HARD SKILLS</h3>
       </div>
-      <div class='space-y-8'>CONTENT</div>
+      <!-- Physics container for stacking tags -->
+      <div
+        id='skills-physics-container'
+        class='absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none'
+      >
+        {
+          HARD_SKILL.map((skill, index) => (
+            <div class='physics-item absolute' data-shape='pill'>
+              <div class={PILL_STYLE} style={`background-color: ${pillColors[index % pillColors.length]};`}>
+                {skill}
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
 
     <!-- Card 4: TOOLS -->
-    <div class='intro-card col-span-9 md:col-span-3 min-h-[384px]'>
-      <h3 class='text-[24px] font-bold font-script mb-8'>TOOLS</h3>
-      <div class='grid grid-cols-3 gap-4'>
-        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
-          <img
-            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
-            class='w-8 h-8'
-            alt='Figma'
-          />
-        </div>
-        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
-          <img
-            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg'
-            class='w-8 h-8'
-            alt='Photoshop'
-          />
-        </div>
-        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
-          <img
-            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'
-            class='w-8 h-8'
-            alt='Illustrator'
-          />
-        </div>
-        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
-          <img
-            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
-            class='w-8 h-8'
-            alt='React'
-          />
-        </div>
-        <div class='bg-surface p-4 rounded-xl flex items-center justify-center shadow-sm'>
-          <img
-            src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg'
-            class='w-8 h-8'
-            alt='JS'
-          />
-        </div>
+    <div
+      id='tools-card'
+      class='intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden'
+    >
+      <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
+        <h3 class='text-[24px] font-bold font-script'>TOOLS</h3>
+      </div>
+      <div
+        id='tools-physics-container'
+        class='absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none'
+      >
+        {
+          TOOLS.map((tool) => (
+            <div class='physics-item absolute' data-shape='rect'>
+              <div class='bg-surface rounded-xl flex items-center justify-center shadow-sm w-[70px] h-[70px] cursor-grab active:cursor-grabbing pointer-events-auto overflow-hidden'>
+                <Image
+                  src={tool.icon}
+                  class={`pointer-events-none select-none ${tool.imgClass}`}
+                  alt={tool.name}
+                  draggable='false'
+                />
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
 
     <!-- Card 5: SOFT SKILLS -->
-    <div class='intro-card col-span-9 md:col-span-3 min-h-[384px]'>
-      <div class='flex justify-between items-start mb-8'>
+    <div
+      id='soft-skills-card'
+      class='intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden'
+    >
+      <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
         <h3 class='text-[24px] font-bold font-script'>SOFT SKILLS</h3>
       </div>
-      <div class='space-y-8'>CONTENT</div>
+      <!-- Physics container for stacking tags -->
+      <div
+        id='soft-skills-physics-container'
+        class='absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none'
+      >
+        {
+          SOFT_SKILL.map((skill, index) => (
+            <div class='physics-item absolute' data-shape='pill'>
+              <div class={PILL_STYLE} style={`background-color: ${pillColors[index % pillColors.length]};`}>
+                {skill}
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
-
-  <!-- Introduction footer -->
-  <!-- <div class='py-20 flex flex-col items-center text-center space-y-8 max-w-3xl mx-auto'>
-    <div class='text-teal-400'>
-      <svg width='48' height='48' viewBox='0 0 24 24' fill='currentColor'>
-        <path
-          d='M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V3L14.017 3C15.1216 3 16.017 3.89543 16.017 5V6H19.017C20.6739 6 22.017 7.34315 22.017 9V15C22.017 16.6569 20.6739 18 19.017 18H17.017V21L14.017 21ZM2 21L2 18C2 16.8954 2.89543 16 4 16H7C7.55228 16 8 15.5523 8 15V9C8 8.44772 7.55228 8 7 8H4C2.89543 8 2 7.10457 2 6V3L2 3C3.10457 3 4 3.89543 4 5V6H7C8.65685 6 10 7.34315 10 9V15C10 16.6569 8.65685 18 7 18H5V21L2 21Z'
-        ></path>
-      </svg>
-    </div>
-    <p class='text-2xl font-medium leading-relaxed italic'>
-      "A UI/UX Designer with more than 2 years creative and detail-oriented UI/UX Designer with experience in
-      wireframing."
-    </p>
-    <div class='flex items-center space-x-4'>
-      <div class='w-12 h-12 rounded-full bg-black/10 overflow-hidden'>
-        <img src='https://api.dicebear.com/7.x/avataaars/svg?seed=Nanthakan' alt='Avatar' />
-      </div>
-      <div class='text-left'>
-        <div class='font-bold'>Nanthakan R.</div>
-        <div class='text-xs text-black/40'>UI/UX Designer</div>
-      </div>
-    </div>
-  </div> -->
 </section>
+
+<script>
+  import Matter from 'matter-js';
+
+  // Handle physic content drop animation
+  document.addEventListener('DOMContentLoaded', () => {
+    const initPhysicsCard = (cardId: string, containerId: string) => {
+      const card = document.getElementById(cardId);
+      const container = document.getElementById(containerId);
+
+      if (!card || !container) return;
+
+      let hasInitialized = false;
+
+      const initPhysics = () => {
+        if (hasInitialized) return;
+        hasInitialized = true;
+
+        // Unhide container now that physics is about to take over
+        container.classList.remove('opacity-0');
+
+        const Engine = Matter.Engine,
+          Runner = Matter.Runner,
+          Bodies = Matter.Bodies,
+          Composite = Matter.Composite,
+          Mouse = Matter.Mouse,
+          MouseConstraint = Matter.MouseConstraint;
+
+        const engine = Engine.create();
+
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+
+        // Boundaries (Thickened to 1000px so fast objects don't tunnel through)
+        const wallOptions = { isStatic: true, render: { visible: false }, friction: 0 };
+        const ground = Bodies.rectangle(width / 2, height + 500, width * 3, 1000, wallOptions);
+        const leftWall = Bodies.rectangle(-500, height / 2, 1000, height * 3, wallOptions);
+        const rightWall = Bodies.rectangle(width + 500, height / 2, 1000, height * 3, wallOptions);
+        const ceiling = Bodies.rectangle(width / 2, -500, width * 3, 1000, wallOptions);
+
+        Composite.add(engine.world, [ground, leftWall, rightWall, ceiling]);
+
+        // Get all DOM elements we want to simulate
+        const itemElements = Array.from(container.querySelectorAll('.physics-item'));
+
+        // Create physical bodies based on DOM elements
+        const bodies = itemElements.map((el: any, i: number) => {
+          // Prepare element position origin
+          el.style.left = '0px';
+          el.style.top = '0px';
+
+          const rect = el.getBoundingClientRect();
+          const startX = width / 2 + (Math.random() - 0.5) * (width * 0.4);
+          const startY = -rect.height - i * 60 - 20;
+
+          const isPill = el.getAttribute('data-shape') === 'pill';
+          const chamferRadius = isPill ? rect.height / 2 : 12; // 12px for rounded-xl
+
+          const body = Bodies.rectangle(startX, startY, rect.width, rect.height, {
+            restitution: 0.45,
+            friction: 0.1,
+            density: 0.002,
+            chamfer: { radius: chamferRadius },
+            render: { visible: false },
+          });
+
+          Matter.Body.setAngle(body, (Math.random() - 0.5) * 0.4);
+
+          body.plugin.domElement = el;
+          return body;
+        });
+
+        Composite.add(engine.world, bodies);
+
+        // Add mouse dragging constraint
+        const mouse = Mouse.create(container);
+        const mouseConstraint = MouseConstraint.create(engine, {
+          mouse: mouse,
+          constraint: {
+            stiffness: 0.2,
+            render: { visible: false },
+          },
+        });
+
+        // Remove wheel listeners to allow normal page scrolling
+        const mouseEvents = mouseConstraint.mouse as any;
+        mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseEvents.mousewheel);
+        mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseEvents.mousewheel);
+        mouseConstraint.mouse.element.removeEventListener('wheel', mouseEvents.mousewheel);
+        mouse.element.style.touchAction = 'auto'; // allow touch scroll on elements
+
+        Composite.add(engine.world, mouseConstraint);
+
+        const runner = Runner.create();
+        Runner.run(runner, engine);
+
+        // Update DOM transform to match physics engine
+        Matter.Events.on(engine, 'afterUpdate', () => {
+          bodies.forEach((body) => {
+            // Failsafe: if item flies completely out of massive bounds, reset it
+            if (
+              body.position.y > height + 200 ||
+              body.position.y < -200 ||
+              body.position.x < -200 ||
+              body.position.x > width + 200
+            ) {
+              Matter.Body.setPosition(body, { x: width / 2, y: 0 });
+              Matter.Body.setVelocity(body, { x: 0, y: 0 });
+            }
+
+            const el = body.plugin.domElement;
+            const x = body.position.x - el.offsetWidth / 2;
+            const y = body.position.y - el.offsetHeight / 2;
+            const angle = body.angle;
+
+            el.style.transform = `translate(${x}px, ${y}px) rotate(${angle}rad)`;
+          });
+        });
+
+        // Keep boundaries updated on resize window
+        window.addEventListener('resize', () => {
+          const newW = container.clientWidth;
+          const newH = container.clientHeight;
+          Matter.Body.setPosition(ground, { x: newW / 2, y: newH + 500 });
+          Matter.Body.setPosition(rightWall, { x: newW + 500, y: newH / 2 });
+          // Note: purposefully omitting Mouse.setElement to avoid rebinding wheel event bugs
+        });
+      };
+
+      // Trigger animation when the card scrolls into view
+      const observer = new IntersectionObserver(
+        (entries) => {
+          if (entries[0].isIntersecting) {
+            initPhysics();
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.2 },
+      ); // Activates when 20% of the card is visible
+
+      observer.observe(card);
+    };
+
+    // Initialize all 3 cards
+    initPhysicsCard('hard-skills-card', 'skills-physics-container');
+    initPhysicsCard('tools-card', 'tools-physics-container');
+    initPhysicsCard('soft-skills-card', 'soft-skills-physics-container');
+  });
+</script>

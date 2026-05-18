@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import circleDraw from '../assets/circle-draw.svg';
+import contactCard from '../assets/contact-card.png';
+---
+
+<section id='contact' class='py-20 md:py-32 max-container px-6 md:px-12 lg:px-24 !pb-0'>
+  <!-- Top text area -->
+  <div class='flex items-center justify-center gap-6 mb-[-120px]'>
+    <!-- Curved arrow -->
+    <div class='absolute flex-shrink-0 -translate-x-1/2 left-[25dvw]'>
+      <svg width='108' height='108' viewBox='0 0 108 108' fill='none' xmlns='http://www.w3.org/2000/svg'>
+        <path
+          d='M76.6903 99.1133C72.6125 99.4755 68.5243 99.8081 64.4585 100.299C59.0501 100.927 53.7111 101.564 48.3649 102.37C47.2305 102.534 45.9533 103.047 45.1058 103.842C43.5359 105.223 44.2834 107.455 46.3761 107.853C47.1892 108.001 48.0685 107.96 48.8873 107.839C59.3814 106.243 69.9515 105.188 80.5561 104.677C85.1002 104.417 89.689 104.475 94.2466 104.443C95.5612 104.416 96.6941 104.153 97.407 102.972C98.1876 101.702 98.2746 100.342 97.4146 99.1131C96.7363 98.1202 95.9312 97.2382 95.0583 96.4463L71.2233 75.6246C70.4613 74.9602 69.6888 74.2662 68.8781 73.6521C67.7056 72.6658 66.4882 72.5928 65.7204 73.4265C64.9231 74.2706 65.0513 75.4891 66.1665 76.5952C68.5459 78.855 71.0329 81.0439 73.4419 83.2934L84.5665 93.8984L85.2919 94.7419L84.2205 94.5182C70.729 89.2625 57.114 84.316 43.814 78.6609C34.301 74.5539 25.5298 68.8917 17.8587 61.9055C11.6188 56.2747 6.93439 49.6013 5.24767 41.1813C4.03983 34.8879 4.19839 28.715 7.81758 23.1604C10.4704 19.0077 14.0064 15.6764 18.1068 13.0123C26.3311 7.86559 35.7819 5.01946 45.4824 4.76802C64.2138 3.72595 82.9101 7.53738 99.7736 15.8358C101.358 16.5785 102.816 17.5312 104.313 18.404C105.701 19.2485 106.572 19.2765 107.241 18.4441C107.84 17.6027 107.655 16.5039 106.444 15.5975C104.592 14.1839 102.72 12.7109 100.677 11.6966C80.9997 1.49954 58.6174 -2.16451 36.7645 1.23406C27.4234 2.63911 18.8992 6.28525 11.5817 12.4351C3.5713 19.1597 -0.854991 27.4236 0.137886 38.2141C0.805123 45.3283 3.18325 51.8441 7.2029 57.7526C12.0117 64.7815 18.474 70.1017 25.3255 75.0199C36.2671 82.8297 48.4941 88.1618 60.9684 92.8756L75.5519 98.4143C75.9505 98.6073 76.3284 98.7411 76.7062 98.875L76.6608 99.1236L76.6903 99.1133Z'
+          fill='black'></path>
+      </svg>
+    </div>
+
+    <!-- Text -->
+    <div class='font-script text-2xl md:text-[32px] leading-snug text-center md:text-left'>
+      <span>If you interested me</span>
+      <br />
+      <span>tap this to </span>
+      <span class='relative inline-block mx-1'>
+        <span class='relative z-10'>contact me</span>
+        <Image
+          src={circleDraw}
+          alt='circle draw'
+          class='absolute top-[60%] left-1/2 w-[120%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none'
+          quality='high'
+        />
+      </span>
+      <span>:)</span>
+    </div>
+  </div>
+
+  <!-- Envelope card -->
+  <div id='envelope-wrapper' class='relative w-full max-w-[900px] mx-auto cursor-pointer z-10'>
+    <!-- The envelope container - clips the card -->
+    <div class='envelope-container relative w-full overflow-hidden' style='aspect-ratio: 16/7;'>
+      <!-- Card image that slides up on hover -->
+      <div
+        id='envelope-card'
+        class='absolute inset-0 w-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)]'
+        style='transform: translateY(35%) rotate(0deg); transform-origin: center center;'
+      >
+        <Image
+          src={contactCard}
+          alt="Contact Card - Let's Work Together"
+          class='w-full h-auto pointer-events-none select-none'
+          quality='high'
+        />
+      </div>
+    </div>
+
+    <!-- Decorative small stars scattered around -->
+    <!-- <div class='absolute -top-4 right-[30%] text-gray-300 text-xl pointer-events-none select-none'>✦</div>
+    <div class='absolute top-[20%] right-[-12px] text-gray-200 text-sm pointer-events-none select-none'>✦</div>
+    <div class='absolute bottom-[10%] right-[15%] text-gray-200 text-base pointer-events-none select-none'>✦</div>
+    <div class='absolute top-[40%] left-[-8px] text-gray-200 text-xs pointer-events-none select-none'>✦</div> -->
+  </div>
+</section>
+
+<style>
+  .envelope-container:hover #envelope-card,
+  #envelope-wrapper:hover .envelope-container #envelope-card {
+    transform: translateY(-10%) rotate(6deg) !important;
+  }
+</style>
