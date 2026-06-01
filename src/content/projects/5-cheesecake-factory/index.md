@@ -1,12 +1,21 @@
 ---
-title: "Project Beta"
-description: "A data visualization dashboard with interactive charts and a clean dashboard layout."
-image: "https://images.unsplash.com/photo-1551288049-bbb6532841ad?auto=format&fit=crop&q=80&w=800"
+title: "The Cheesecake Factory Thailand"
+description: "Web design"
+image: "./cover.png"
 liveUrl: "https://project-beta.example.com"
 repoUrl: "https://github.com/user/project-beta"
 techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
 order: 2
+client: "Client Name"
+service: "Service Type"
+challenges: "Sample challenges."
+solutions: "Sample solutions."
+outcome: "Sample outcome."
+heroMockup: "./cover.png"
+desktopMockups: ["./cover.png"]
+mobileMockups: ["./cover.png"]
+phoneMockup: "./cover.png"
 ---
 
 ## Project Overview

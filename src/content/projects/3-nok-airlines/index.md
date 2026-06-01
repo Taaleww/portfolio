@@ -1,12 +1,21 @@
 ---
-title: "Project Gamma"
-description: "A mobile-first e-commerce application with a smooth checkout experience."
-image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800"
+title: "Nok Airlines Public Company Limited"
+description: "Web design"
+image: "./cover.png"
 liveUrl: "https://project-gamma.example.com"
 repoUrl: "https://github.com/user/project-gamma"
 techStack: ["Vue.js", "Tailwind CSS", "Strapi"]
 featured: true
 order: 3
+client: "Client Name"
+service: "Service Type"
+challenges: "Sample challenges."
+solutions: "Sample solutions."
+outcome: "Sample outcome."
+heroMockup: "./cover.png"
+desktopMockups: ["./cover.png"]
+mobileMockups: ["./cover.png"]
+phoneMockup: "./cover.png"
 ---
 
 ## Project Overview

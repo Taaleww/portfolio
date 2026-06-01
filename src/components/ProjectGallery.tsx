@@ -4,10 +4,11 @@ import circleDraw from '../assets/circle-draw.svg';
 interface Project {
   title: string;
   description: string;
-  image: string;
+  image: any; // Changed from string to any to support Astro ImageMetadata
   liveUrl?: string;
   repoUrl?: string;
   techStack: string[];
+  slug: string; // Added slug
 }
 
 interface Props {
@@ -62,15 +63,18 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
           </div>
 
           {/* Project Grid */}
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-20  lg:gap-x-20'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-20 lg:gap-x-20'>
             {projects.map((project) => (
-              <div key={project.title} className='group cursor-pointer flex flex-col'>
+              <a
+                href={`/portfolio/projects/${project.slug}`}
+                key={project.title}
+                className='group cursor-pointer flex flex-col'>
                 {/* Image Container */}
                 <div
                   className='aspect-[1.4/1] rounded-[24px] overflow-hidden shadow-sm border-[4px] border-white transition-transform duration-500 group-hover:-translate-y-2 mb-4 bg-gray-100'
                   style={{ boxShadow: '0px 0px 10px 0px #00000040' }}>
                   <img
-                    src={project.image}
+                    src={typeof project.image === 'string' ? project.image : project.image.src}
                     alt={project.title}
                     className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'
                   />
@@ -84,20 +88,20 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
                       <path
                         d='M1.50012 11.0216C7.23486 10.3883 15.2217 10.2694 21.3176 10.0119C29.2377 9.8674 34.8663 9.86505 35.8906 9.95062C36.4065 9.97971 36.9148 9.97971 38.4653 10.1508'
                         stroke='black'
-                        stroke-width='3'
-                        stroke-linecap='round'
+                        strokeWidth='3'
+                        strokeLinecap='round'
                       />
                       <path
                         d='M30.6796 1.5C31.5832 2.57473 36.0156 6.55533 39.8199 8.99401C40.9468 9.71634 42.8507 10.2142 41.5265 11.5799C40.2022 12.9455 35.6917 14.9786 33.1682 16.1671C30.6448 17.3557 30.2451 17.638 28.9683 18.2712'
                         stroke='black'
-                        stroke-width='3'
-                        stroke-linecap='round'
+                        strokeWidth='3'
+                        strokeLinecap='round'
                       />
                     </svg>
                   </div>
                   <div className='text-[18px] font-[400] text-[#5D5D5D]'>{project.description}</div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>

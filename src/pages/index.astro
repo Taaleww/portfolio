@@ -4,7 +4,9 @@ import MainLayout from '../layouts/MainLayout.astro';
 import Hero from '../components/Hero.astro';
 import Introduction from '../components/Introduction.astro';
 import ProjectGallery from '../components/ProjectGallery.tsx';
+import Workflow from '../components/Workflow.astro';
 import Contact from '../components/Contact.astro';
+import Header from '../components/Header.astro';
 
 const allProjects = await getCollection('projects');
 const sortedProjects = allProjects
@@ -16,8 +18,10 @@ const sortedProjects = allProjects
 ---
 
 <MainLayout title='Nanthakan R. | UI/UX Designer Portfolio'>
+  <Header />
   <Hero />
   <Introduction />
   <ProjectGallery client:load projects={sortedProjects} />
+  <Workflow />
   <Contact />
 </MainLayout>

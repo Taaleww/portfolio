@@ -1,0 +1,299 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import MainLayout from '../../layouts/MainLayout.astro';
+import circleDraw from '../../assets/circle-draw.svg';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+const {
+  title,
+  description,
+  image,
+  liveUrl,
+  repoUrl,
+  techStack,
+  client,
+  service,
+  challenges,
+  solutions,
+  outcome,
+  heroMockup,
+  desktopMockups,
+  mobileMockups,
+  phoneMockup,
+} = project.data;
+
+// Get all projects to display in "Other Projects" section
+const allProjects = await getCollection('projects');
+const otherProjects = allProjects
+  .filter((p) => p.slug !== project.slug)
+  .sort((a, b) => b.data.order - a.data.order)
+  .slice(0, 2);
+---
+
+<MainLayout title={`${title} | Project Details`}>
+  <div class='bg-[#F8F8F8] min-h-screen font-sans text-black'>
+    <article class='pt-32 pb-24 max-container px-6 md:px-12 lg:px-24'>
+      <!-- Project Hero Section -->
+      <section class='grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-32'>
+        <div class='space-y-8'>
+          <h1 class='text-6xl md:text-7xl font-bold tracking-tight leading-tight uppercase font-script'>
+            {title}
+          </h1>
+          <p class='text-xl md:text-2xl text-[#5D5D5D] leading-relaxed max-w-xl'>
+            {description}
+          </p>
+          {
+            liveUrl && (
+              <a
+                href={liveUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                class='inline-flex items-center space-x-2 text-black font-bold text-lg border-b-2 border-black pb-1 hover:opacity-70 transition-opacity'>
+                <span>Launch the site</span>
+                <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                  <path
+                    d='M5 15L15 5M15 5H7M15 5V13'
+                    stroke='black'
+                    stroke-width='2'
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                  />
+                </svg>
+              </a>
+            )
+          }
+        </div>
+
+        <!-- Hero Mockup (Laptop) -->
+        <div class='relative'>
+          <div class='rounded-[32px] overflow-hidden bg-gray-200 aspect-[1.5/1] shadow-2xl'>
+            {
+              heroMockup ? (
+                <Image src={heroMockup} alt={`${title} Mockup`} class='w-full h-full object-cover' />
+              ) : (
+                <Image src={image as any} alt={title} class='w-full h-full object-cover' />
+              )
+            }
+          </div>
+        </div>
+      </section>
+
+      <!-- About Project Section -->
+      <section class='grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32'>
+        <div class='lg:col-span-4'>
+          <h2 class='text-4xl font-bold font-script relative inline-block'>
+            <span class='relative z-10'>About project</span>
+            <!-- Hand-drawn Teal Loop -->
+            <svg
+              class='absolute top-1/2 left-[-10%] w-[120%] h-[140%] -translate-y-1/2 -z-0 pointer-events-none'
+              viewBox='0 0 100 100'
+              preserveAspectRatio='none'
+            >
+              <ellipse
+                cx='50'
+                cy='50'
+                rx='48'
+                ry='35'
+                stroke='#8AE2E6'
+                stroke-width='2'
+                fill='none'
+                transform='rotate(-2 50 50)'></ellipse>
+              <path
+                d='M5,50 Q10,10 50,12 Q90,15 95,50 Q90,85 50,88 Q10,85 5,50'
+                stroke='#8AE2E6'
+                stroke-width='2'
+                fill='none'
+                opacity='0.5'></path>
+            </svg>
+          </h2>
+        </div>
+        <div class='lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8'>
+          <div>
+            <h4 class='text-sm uppercase tracking-widest text-gray-400 font-bold mb-2'>Client</h4>
+            <p class='text-xl font-medium'>{client || 'Private Client'}</p>
+          </div>
+          <div>
+            <h4 class='text-sm uppercase tracking-widest text-gray-400 font-bold mb-2'>Service</h4>
+            <p class='text-xl font-medium'>{service || 'Web Design'}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Large Mockup Section -->
+      {
+        desktopMockups && desktopMockups.length > 0 && (
+          <section class='mb-32'>
+            <div class='rounded-[40px] bg-white p-4 md:p-8 shadow-sm border border-gray-100 overflow-hidden'>
+              <div class='grid grid-cols-3 gap-4'>
+                {desktopMockups.slice(0, 3).map((mockup: any) => (
+                  <Image
+                    src={mockup}
+                    alt='Desktop Screen'
+                    class='rounded-2xl border border-gray-100 shadow-sm w-full'
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      }
+
+      <!-- Overview Project Section -->
+      <section class='grid grid-cols-1 lg:grid-cols-12 gap-12 mb-32'>
+        <div class='lg:col-span-4'>
+          <h2 class='text-4xl font-bold font-script relative inline-block'>
+            <span class='relative z-10'>Overview project</span>
+            <!-- Hand-drawn Teal Circle/Oval -->
+            <Image
+              src={circleDraw}
+              alt='circle draw'
+              class='absolute top-1/2 left-1/2 w-[115%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none'
+            />
+          </h2>
+        </div>
+        <div class='lg:col-span-8 space-y-12'>
+          {
+            challenges && (
+              <div>
+                <h3 class='text-2xl font-bold mb-4'>Challenges</h3>
+                <p class='text-lg text-[#5D5D5D] leading-relaxed'>{challenges}</p>
+              </div>
+            )
+          }
+          {
+            solutions && (
+              <div>
+                <h3 class='text-2xl font-bold mb-4'>Solutions</h3>
+                <p class='text-lg text-[#5D5D5D] leading-relaxed'>{solutions}</p>
+              </div>
+            )
+          }
+          {
+            outcome && (
+              <div>
+                <h3 class='text-2xl font-bold mb-4'>Outcome</h3>
+                <p class='text-lg text-[#5D5D5D] leading-relaxed'>{outcome}</p>
+              </div>
+            )
+          }
+        </div>
+      </section>
+
+      <!-- Mobile & Phone Mockups -->
+      <section class='mb-32 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start'>
+        {
+          phoneMockup && (
+            <div class='flex justify-center'>
+              <div class='w-full max-w-[400px] aspect-[1/2] rounded-[60px] border-[12px] border-black bg-black overflow-hidden shadow-2xl origin-top'>
+                <Image src={phoneMockup} alt='Phone Mockup' class='w-full h-full object-cover' />
+              </div>
+            </div>
+          )
+        }
+        {
+          mobileMockups && mobileMockups.length > 0 && (
+            <div class='space-y-8'>
+              <div class='rounded-[40px] overflow-hidden bg-white shadow-sm border border-gray-100 p-4'>
+                <div class='grid grid-cols-2 gap-4'>
+                  {mobileMockups.slice(0, 4).map((mockup: any) => (
+                    <Image src={mockup} alt='Mobile Screen' class='rounded-xl border border-gray-100 w-full' />
+                  ))}
+                </div>
+              </div>
+            </div>
+          )
+        }
+      </section>
+
+      <!-- Other Projects Section -->
+      <section class='pt-32 border-t border-gray-200'>
+        <div class='flex flex-col md:flex-row justify-between items-center mb-16 gap-6'>
+          <h2 class='text-4xl font-bold font-script relative inline-block'>
+            <span class='relative z-10'>Other projects</span>
+            <svg
+              class='absolute top-1/2 left-[-10%] w-[120%] h-[140%] -translate-y-1/2 -z-0 pointer-events-none'
+              viewBox='0 0 100 100'
+              preserveAspectRatio='none'
+            >
+              <circle cx='50' cy='50' r='45' stroke='#8AE2E6' stroke-width='3' fill='none'></circle>
+            </svg>
+          </h2>
+          <a href='/#projects' class='text-black font-bold text-lg hover:opacity-70 transition-opacity'
+            >See all project</a
+          >
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-12'>
+          {
+            otherProjects.map((p: any) => (
+              <a href={`/portfolio/projects/${p.slug}`} class='group'>
+                <div class='aspect-[16/10] rounded-[32px] overflow-hidden bg-gray-100 mb-6 border-4 border-white shadow-md group-hover:-translate-y-2 transition-transform duration-500'>
+                  <Image
+                    src={p.data.image as any}
+                    alt={p.data.title}
+                    class='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+                  />
+                </div>
+                <div class='flex items-center space-x-2'>
+                  <h3 class='text-2xl font-bold'>{p.data.title}</h3>
+                  <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <path
+                      d='M5 12H19M19 12L12 5M19 12L12 19'
+                      stroke='black'
+                      stroke-width='2'
+                      stroke-linecap='round'
+                      stroke-linejoin='round'
+                    />
+                  </svg>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <!-- Contact Footer CTA -->
+      <section class='mt-48 bg-[#1A1A1A] rounded-[48px] p-12 md:p-24 text-white relative overflow-hidden'>
+        <div class='relative z-10 max-w-2xl'>
+          <h2 class='text-5xl md:text-7xl font-bold mb-8 uppercase'>Let's work together</h2>
+          <p class='text-xl md:text-2xl text-gray-400 mb-12'>If you interested me tap this to contact me :)</p>
+          <a
+            href='/#contact'
+            class='bg-[#8AE2E6] text-black px-8 py-4 rounded-full font-bold text-xl hover:bg-white transition-colors'
+          >
+            Contact me
+          </a>
+        </div>
+
+        <!-- Hand-drawn arrow to contact (simulated with SVG) -->
+        <div class='absolute right-12 bottom-12 hidden lg:block opacity-30'>
+          <svg width='200' height='200' viewBox='0 0 200 200' fill='none' class='-rotate-12'>
+            <path d='M20,180 Q100,180 180,20' stroke='white' stroke-width='4' fill='none' stroke-dasharray='10 10'
+            ></path>
+            <path d='M160,40 L180,20 L160,20' stroke='white' stroke-width='4' fill='none'></path>
+          </svg>
+        </div>
+      </section>
+    </article>
+  </div>
+</MainLayout>
+
+<style>
+  .font-script {
+    font-family: 'Handlee', 'cursive', sans-serif; /* Fallback for script font */
+  }
+</style>
