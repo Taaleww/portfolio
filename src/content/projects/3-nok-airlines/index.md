@@ -1,21 +1,21 @@
 ---
-title: "Nok Airlines Public Company Limited"
-description: "Web design"
+title: "Nok Deal"
+category: "Web design"
+description: "A Nok Fan Club rewards platform where members can redeem points for exclusive deals, merchandise, and exclusive privileges."
 image: "./cover.png"
+overviewImage: "./overview.png"
 liveUrl: "https://project-gamma.example.com"
 repoUrl: "https://github.com/user/project-gamma"
 techStack: ["Vue.js", "Tailwind CSS", "Strapi"]
 featured: true
 order: 3
-client: "Client Name"
-service: "Service Type"
-challenges: "Sample challenges."
-solutions: "Sample solutions."
-outcome: "Sample outcome."
+client: "Nok Airlines Public Company Limited"
+service: "Web Design <br/>User Experience Design"
+challenges: "The challenge was to create a seamless rewards platform that makes point redemption simple, engaging, and easy to navigate while managing various deals, privileges, and member benefits. "
+solutions: "Designed a user-friendly and conversion-focused experience with clear reward categorization, intuitive redemption flows, and a modern interface that enhances accessibility and member engagement."
+outcome: "Delivered an engaging loyalty platform that improves the overall redemption experience, increases user interaction, and strengthens customer engagement within the Nok Fan Club ecosystem."
 heroMockup: "./cover.png"
-desktopMockups: ["./cover.png"]
-mobileMockups: ["./cover.png"]
-phoneMockup: "./cover.png"
+otherImages: ["./other-images/1.png", "./other-images/2.png", "./other-images/3.png", "./other-images/4.png", "./other-images/5.png", "./other-images/6.png", "./other-images/7.png"]
 ---
 
 ## Project Overview

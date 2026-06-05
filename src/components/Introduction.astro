@@ -38,13 +38,13 @@ const PILL_STYLE =
   'text-black px-5 py-2.5 rounded-full font-medium text-[15px] whitespace-nowrap cursor-grab active:cursor-grabbing border-2 border-white shadow-sm pointer-events-auto select-none';
 ---
 
-<section id='about' class='py-[120px] max-container space-y-[60px]'>
+<section id='about' class='pt-[80px] md:pt-[120px] pb-[100px] max-container space-y-[60px]'>
   <!-- Introduction header -->
-  <div class='text-center'>
-    <h2 class='text-5xl md:text-[56px] font-normal h-[90px]'>
-      <span class='font-script relative z-10'>
+  <div class='text-center mb-10 md:mb-[60px]'>
+    <h2 class='text-[32px] md:text-[56px] font-normal h-fit'>
+      <span class='font-script relative z-10 ml-[-8px]'>
         Let's me
-        <span class='relative inline-block mx-1'>
+        <span class='relative inline-block'>
           <span class='relative z-10'>introduce</span>
           <Image
             src={circleDraw}
@@ -59,11 +59,11 @@ const PILL_STYLE =
   </div>
 
   <!-- Introduction content -->
-  <div class='grid grid-cols-9 gap-6 w-full max-w-[1200px] mx-auto px-6 lg:px-0'>
+  <div class='grid grid-cols-9 gap-6 w-full max-w-[1200px] mx-auto px-5 lg:px-0'>
     <!-- Card 1: INTRODUCE -->
     <div class='intro-card col-span-9 md:col-span-5 min-h-[372px] justify-between flex flex-col items-start'>
       <div class='flex justify-between items-start mb-8'>
-        <h3 class='text-[24px] font-bold font-script'>INTRODUCE</h3>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>INTRODUCE</h3>
       </div>
       <div>
         <p class='text-light'>
@@ -80,7 +80,7 @@ const PILL_STYLE =
               <Image src={profileIcon} alt='profile icon' class='h-[56px] w-[56px]' quality='high' />
             </div>
             <div>
-              <p class='text-[18px] text-black leading-[29px]'>Nanthakan Rujilakhanon</p>
+              <p class='text-[16px] text-black leading-[29px]'>Nanthakan Rujilakhanon</p>
               <p class='text-[14px] text-light leading-[20px]'>UX/UI Designer</p>
             </div>
           </div>
@@ -91,24 +91,26 @@ const PILL_STYLE =
     <!-- Card 2: EDUCATION & EXPERIENCE-->
     <div class='intro-card col-span-9 md:col-span-4 min-h-[372px] gap-10 flex flex-col items-start'>
       <div class='w-full flex flex-col gap-4'>
-        <h3 class='text-[24px] font-bold font-script'>EDUCATION</h3>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>EDUCATION</h3>
 
         <!-- Education -->
         <div class='w-full'>
-          <div class='flex flex-row items-start justify-between w-full'>
+          <div class='flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0'>
             <p class='text-[16px] text-black font-[500] leading-[22px]'>Bachelor of Computer Engineering</p>
             <span class='text-xs text-light leading-[20px]'>August 2019 - May 2023</span>
           </div>
-          <p class='text-xs text-light leading-[20px] max-w-[50%]'>King Mongkut's University of Technology Thonburi</p>
+          <p class='text-xs text-light leading-[20px] md:max-w-[50%]'>
+            King Mongkut's University of Technology Thonburi
+          </p>
         </div>
       </div>
 
       <div class='w-full flex flex-col gap-4'>
-        <h3 class='text-[24px] font-bold font-script'>EXPERIENCE</h3>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>EXPERIENCE</h3>
 
         <!-- Experience 1 -->
         <div class='w-full'>
-          <div class='flex flex-row items-start justify-between w-full'>
+          <div class='flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0'>
             <p class='text-[16px] text-black font-[500] leading-[22px]'>CalCal Co., Ltd.</p>
             <span class='text-xs text-light leading-[20px]'>June 2022 - August 2022</span>
           </div>
@@ -117,7 +119,7 @@ const PILL_STYLE =
 
         <!-- Experience 2 -->
         <div class='w-full'>
-          <div class='flex flex-row items-start justify-between w-full'>
+          <div class='flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0'>
             <p class='text-[16px] text-black font-[500] leading-[22px]'>Geminine Studio</p>
             <span class='text-xs text-light leading-[20px]'>August 2023 - Present</span>
           </div>
@@ -132,7 +134,7 @@ const PILL_STYLE =
       class='intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden'
     >
       <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
-        <h3 class='text-[24px] font-bold font-script'>HARD SKILLS</h3>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>HARD SKILLS</h3>
       </div>
       <!-- Physics container for stacking tags -->
       <div
@@ -157,7 +159,7 @@ const PILL_STYLE =
       class='intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden'
     >
       <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
-        <h3 class='text-[24px] font-bold font-script'>TOOLS</h3>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>TOOLS</h3>
       </div>
       <div
         id='tools-physics-container'
@@ -186,7 +188,7 @@ const PILL_STYLE =
       class='intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden'
     >
       <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
-        <h3 class='text-[24px] font-bold font-script'>SOFT SKILLS</h3>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>SOFT SKILLS</h3>
       </div>
       <!-- Physics container for stacking tags -->
       <div
@@ -210,8 +212,17 @@ const PILL_STYLE =
 <script>
   import Matter from 'matter-js';
 
+  let activeRunners: Matter.Runner[] = [];
+
+  const cleanupPhysics = () => {
+    activeRunners.forEach((runner) => Matter.Runner.stop(runner));
+    activeRunners = [];
+  };
+
   // Handle physic content drop animation
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('astro:page-load', () => {
+    cleanupPhysics();
+
     const initPhysicsCard = (cardId: string, containerId: string) => {
       const card = document.getElementById(cardId);
       const container = document.getElementById(containerId);
@@ -301,6 +312,7 @@ const PILL_STYLE =
 
         const runner = Runner.create();
         Runner.run(runner, engine);
+        activeRunners.push(runner);
 
         // Update DOM transform to match physics engine
         Matter.Events.on(engine, 'afterUpdate', () => {
@@ -326,13 +338,23 @@ const PILL_STYLE =
         });
 
         // Keep boundaries updated on resize window
-        window.addEventListener('resize', () => {
+        const handleResize = () => {
           const newW = container.clientWidth;
           const newH = container.clientHeight;
           Matter.Body.setPosition(ground, { x: newW / 2, y: newH + 500 });
           Matter.Body.setPosition(rightWall, { x: newW + 500, y: newH / 2 });
-          // Note: purposefully omitting Mouse.setElement to avoid rebinding wheel event bugs
-        });
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Custom cleanup for this card's specific elements/listeners
+        document.addEventListener(
+          'astro:before-swap',
+          () => {
+            window.removeEventListener('resize', handleResize);
+          },
+          { once: true },
+        );
       };
 
       // Trigger animation when the card scrolls into view
@@ -354,4 +376,7 @@ const PILL_STYLE =
     initPhysicsCard('tools-card', 'tools-physics-container');
     initPhysicsCard('soft-skills-card', 'soft-skills-physics-container');
   });
+
+  // Global cleanup when leaving the page
+  document.addEventListener('astro:before-swap', cleanupPhysics);
 </script>

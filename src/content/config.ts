@@ -5,8 +5,10 @@ const projectsCollection = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      category: z.string(),
       description: z.string(),
       image: z.union([image(), z.string()]), // Support both local images and remote URLs
+      overviewImage: z.union([image(), z.string()]), // Support both local images and remote URLs
       liveUrl: z.string().url().optional(),
       repoUrl: z.string().url().optional(),
       techStack: z.array(z.string()),
@@ -20,9 +22,7 @@ const projectsCollection = defineCollection({
       solutions: z.string().optional(),
       outcome: z.string().optional(),
       heroMockup: image().optional(),
-      desktopMockups: z.array(image()).optional(),
-      mobileMockups: z.array(image()).optional(),
-      phoneMockup: image().optional(),
+      otherImages: z.array(image()).optional(),
     }),
 });
 
