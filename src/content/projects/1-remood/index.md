@@ -4,7 +4,7 @@ category: "Web design"
 description: "A modern interior and exterior materials website crafted to inspire better living spaces."
 image: "./cover.png"
 overviewImage: "./overview.png"
-liveUrl: "https://project-alpha.example.com"
+liveUrl: "https://remood.co.th/"
 repoUrl: "https://github.com/user/project-alpha"
 techStack: ["Astro", "Tailwind CSS", "React"]
 featured: true

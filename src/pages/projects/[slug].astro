@@ -1,12 +1,12 @@
 ---
-import { getCollection, type CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
-import circleDraw from '../../assets/circle-draw.svg';
-import ProjectLayout from '../../layouts/ProjectLayout.astro';
-import Contact from '../../components/Contact.astro';
+import { getCollection, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import circleDraw from "../../assets/circle-draw.svg";
+import ProjectLayout from "../../layouts/ProjectLayout.astro";
+import Contact from "../../components/Contact.astro";
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
+  const projects = await getCollection("projects");
   return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  project: CollectionEntry<'projects'>;
+  project: CollectionEntry<"projects">;
 }
 
 const { project } = Astro.props;
@@ -37,7 +37,7 @@ const {
 } = project.data;
 
 // Get all projects to display in "Other Projects" section
-const allProjects = await getCollection('projects');
+const allProjects = await getCollection("projects");
 const otherProjects = allProjects
   .filter((p) => p.slug !== project.slug)
   .sort((a, b) => b.data.order - a.data.order)
@@ -46,37 +46,53 @@ const otherProjects = allProjects
 
 <ProjectLayout title={`${title} | Project Details`}>
   <div
-    class='bg-white rounded-[16px] md:rounded-[24px] font-sans text-black max-h-[calc(100dvh-90px)] md:max-h-[calc(100dvh-100px)]'
+    class="bg-white rounded-[16px] md:rounded-[24px] font-sans text-black max-h-[calc(100dvh-90px)] md:max-h-[calc(100dvh-40px)]"
   >
-    <article class='pt-10 md:pt-[120px] max-w-[1200px] mx-4 md:mx-10 lg:mx-auto' style='box-sizing: content-box;'>
+    <article
+      class="pt-10 md:pt-[120px] max-w-[1200px] mx-4 md:mx-10 lg:mx-auto"
+      style="box-sizing: content-box;"
+    >
       <!-- Project Hero Section -->
-      <section class='flex flex-col md:flex-row gap-[40px] md:gap-[100px] items-center'>
-        <div class='font-normal w-full md:max-w-[500px]'>
+      <section
+        class="flex flex-col md:flex-row gap-[40px] md:gap-[100px] items-start"
+      >
+        <div class="font-normal w-full md:max-w-[500px]">
           <h1
-            class='font-script text-[32px] md:text-[56px] font-normal tracking-tight leading-[140%] mb-[10px]'
-            style='letter-spacing: 1%;'
+            class="font-script text-[32px] md:text-[56px] font-normal tracking-tight leading-[140%] mb-[10px]"
+            style="letter- spacing: 1%;"
           >
             {title}
           </h1>
-          <p class='text-xl md:text-2xl leading-[140%] max-w-xl font-normal mb-[60px]'>
+          <p
+            class="text-lg md:text-xl leading-[140%] max-w-xl font-normal mb-[60px]"
+          >
             {description}
           </p>
           {
             liveUrl && (
               <a
                 href={liveUrl}
-                target='_blank'
-                rel='noopener noreferrer'
-                class='inline-flex items-center space-x-2 text-black font-normal text-[18px] hover:opacity-70 transition-opacity'>
-                <span class='border-b-2 border-black pb-1'>Launch the site</span>
-                <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center space-x-2 text-black font-normal text-[18px] hover:opacity-70 transition-opacity"
+              >
+                <span class="border-b-2 border-black pb-1">
+                  Launch the site
+                </span>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
-                    d='M15 5H6.90625C6.74049 5 6.58152 4.93415 6.46431 4.81694C6.3471 4.69973 6.28125 4.54076 6.28125 4.375C6.28125 4.20924 6.3471 4.05027 6.46431 3.93306C6.58152 3.81585 6.74049 3.75 6.90625 3.75H15.625C15.7908 3.75 15.9497 3.81585 16.0669 3.93306C16.1842 4.05027 16.25 4.20924 16.25 4.375V13.125C16.25 13.2908 16.1842 13.4497 16.0669 13.5669C15.9497 13.6842 15.7908 13.75 15.625 13.75C15.4592 13.75 15.3003 13.6842 15.1831 13.5669C15.0658 13.4497 15 13.2908 15 13.125V5Z'
-                    fill='black'
+                    d="M15 5H6.90625C6.74049 5 6.58152 4.93415 6.46431 4.81694C6.3471 4.69973 6.28125 4.54076 6.28125 4.375C6.28125 4.20924 6.3471 4.05027 6.46431 3.93306C6.58152 3.81585 6.74049 3.75 6.90625 3.75H15.625C15.7908 3.75 15.9497 3.81585 16.0669 3.93306C16.1842 4.05027 16.25 4.20924 16.25 4.375V13.125C16.25 13.2908 16.1842 13.4497 16.0669 13.5669C15.9497 13.6842 15.7908 13.75 15.625 13.75C15.4592 13.75 15.3003 13.6842 15.1831 13.5669C15.0658 13.4497 15 13.2908 15 13.125V5Z"
+                    fill="black"
                   />
                   <path
-                    d='M15.1817 3.93169C15.2993 3.81411 15.4588 3.74805 15.6251 3.74805C15.7913 3.74805 15.9508 3.81411 16.0684 3.93169C16.186 4.04928 16.2521 4.20876 16.2521 4.37505C16.2521 4.54134 16.186 4.70082 16.0684 4.81841L5.44341 15.4434C5.32583 15.561 5.16634 15.6271 5.00005 15.6271C4.83376 15.6271 4.67428 15.561 4.55669 15.4434C4.43911 15.3258 4.37305 15.1663 4.37305 15.0001C4.37305 14.8338 4.43911 14.6743 4.55669 14.5567L15.1817 3.93169Z'
-                    fill='black'
+                    d="M15.1817 3.93169C15.2993 3.81411 15.4588 3.74805 15.6251 3.74805C15.7913 3.74805 15.9508 3.81411 16.0684 3.93169C16.186 4.04928 16.2521 4.20876 16.2521 4.37505C16.2521 4.54134 16.186 4.70082 16.0684 4.81841L5.44341 15.4434C5.32583 15.561 5.16634 15.6271 5.00005 15.6271C4.83376 15.6271 4.67428 15.561 4.55669 15.4434C4.43911 15.3258 4.37305 15.1663 4.37305 15.0001C4.37305 14.8338 4.43911 14.6743 4.55669 14.5567L15.1817 3.93169Z"
+                    fill="black"
                   />
                 </svg>
               </a>
@@ -85,16 +101,24 @@ const otherProjects = allProjects
         </div>
 
         <!-- Hero Mockup (Laptop) -->
-        <div class='relative'>
+        <div class="relative">
           <div
-            class='rounded-[32px] overflow-hidden bg-gray-200 aspect-[4/3] w-full h-full lg:w-[600px] lg:h-[450px]'
-            style='box-shadow: 0px 0px 10px 0px #00000040; border: 4px solid #FFFFFF'
+            class="rounded-[32px] overflow-hidden bg-gray-200 aspect-[4/3] w-full h-full lg:w-[600px] lg:h-[450px]"
+            style="box-shadow: 0px 0px 10px 0px #00000040; border: 4px solid #FFFFFF"
           >
             {
               heroMockup ? (
-                <Image src={heroMockup} alt={`${title} Mockup`} class='w-full h-full object-cover' />
+                <Image
+                  src={heroMockup}
+                  alt={`${title} Mockup`}
+                  class="w-full h-full object-cover"
+                />
               ) : (
-                <Image src={image as any} alt={title} class='w-full h-full object-cover' />
+                <Image
+                  src={image as any}
+                  alt={title}
+                  class="w-full h-full object-cover"
+                />
               )
             }
           </div>
@@ -103,33 +127,42 @@ const otherProjects = allProjects
 
       <!-- Divider -->
       <hr
-        class='border-0 h-[1px] my-10'
-        style='background-image: linear-gradient(to right, #C8C8C8 50%, transparent 50%); background-size: 12px 1px; background-repeat: repeat-x;'
+        class="border-0 h-[1px] my-10"
+        style="background-image: linear-gradient(to right, #C8C8C8 50%, transparent 50%); background-size: 12px 1px; background-repeat: repeat-x;"
       />
 
       <!-- About Project Section -->
-      <section class='flex flex-col md:flex-row justify-between gap-6 md:gap-[120px] mb-[60px]'>
+      <section
+        class="flex flex-col md:flex-row justify-between gap-6 md:gap-[120px] mb-[60px]"
+      >
         <h2
-          class='text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]'
+          class="text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]"
         >
-          <span class='relative inline-block'>
-            <span class='relative z-10'>About project</span>
+          <span class="relative inline-block">
+            <span class="relative z-10">About project</span>
             <!-- Hand-drawn Teal Loop -->
             <Image
               src={circleDraw}
-              alt='circle draw'
-              class='absolute top-1/2 left-1/2 w-[100%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none'
+              alt="circle draw"
+              class="absolute top-1/2 left-1/2 w-[100%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none"
             />
           </span>
         </h2>
-        <div class='grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[600px] md:w-full'>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-[600px] md:w-full"
+        >
           <div>
-            <h4 class='text-[18px] uppercase tracking-widest font-normal mb-[6px]'>Client</h4>
-            <p class='text-[16px] font-normal text-[#A6A6A6]'>{client || '-'}</p>
+            <h4 class="text-[18px] font-normal mb-[6px]">Client</h4>
+            <p class="text-[16px] font-normal text-[#A6A6A6]">
+              {client || "-"}
+            </p>
           </div>
           <div>
-            <h4 class='text-[18px] uppercase tracking-widest font-normal mb-[6px]'>Service</h4>
-            <p class='text-[16px] font-normal text-[#A6A6A6]' set:html={service || '-'} />
+            <h4 class="text-[18px] font-normal mb-[6px]">Service</h4>
+            <p
+              class="text-[16px] font-normal text-[#A6A6A6]"
+              set:html={service || "-"}
+            />
           </div>
         </div>
       </section>
@@ -137,55 +170,76 @@ const otherProjects = allProjects
       <!-- Large overview image section -->
       {
         overviewImage && (
-          <section class='mb-[60px] md:mb-[100px]'>
-            <div class='rounded-[16px] md:rounded-[32px] bg-white shadow-sm overflow-hidden'>
-              <Image src={overviewImage as any} alt='Desktop Screen' class='w-full' />
+          <section class="mb-[60px] md:mb-[100px]">
+            <div class="rounded-[16px] md:rounded-[32px] bg-white shadow-sm overflow-hidden">
+              <Image
+                src={overviewImage as any}
+                alt="Desktop Screen"
+                class="w-full"
+              />
             </div>
           </section>
         )
       }
 
       <!-- Overview Project Section -->
-      <section class='grid grid-cols-1 lg:grid-cols-12 gap-6 mb-[60px] md:mb-[100px]'>
-        <div class='lg:col-span-4'>
+      <section
+        class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-[60px] md:mb-[100px]"
+      >
+        <div class="lg:col-span-6">
           <h2
-            class='text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]'
+            class="text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]"
           >
-            <span class='relative inline-block'>
-              <span class='relative z-10'>Overview project</span>
+            <span class="relative inline-block">
+              <span class="relative z-10">Overview project</span>
               <!-- Hand-drawn Teal Loop -->
               <Image
                 src={circleDraw}
-                alt='circle draw'
-                class='absolute top-1/2 left-1/2 w-[100%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none'
+                alt="circle draw"
+                class="absolute top-1/2 left-1/2 w-[100%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none"
               />
             </span>
           </h2>
         </div>
-        <div class='lg:col-span-8'>
+        <div class="lg:col-span-6">
           {
             challenges && (
               <div>
-                <h3 class='text-[18px] md:text-[20px] font-normal mb-4'>Challenges</h3>
-                <p class='text-[16px] md:text-[18px] text-[#A6A6A6] font-normal leading-[160%]' set:html={challenges} />
+                <h3 class="text-[18px] md:text-[20px] font-normal mb-4">
+                  Challenges
+                </h3>
+                <p
+                  class="text-[16px] md:text-[18px] text-[#A6A6A6] font-normal leading-[160%] "
+                  set:html={challenges}
+                />
               </div>
             )
           }
-          <hr class='border-t border-[#F3F3F3] my-[28px] md:my-[40px]' />
+          <hr class="border-t border-[#F3F3F3] my-[28px] md:my-[40px]" />
           {
             solutions && (
               <div>
-                <h3 class='text-[18px] md:text-[20px] font-normal mb-4'>Solutions</h3>
-                <p class='text-[16px] md:text-[18px] text-[#A6A6A6] font-normal leading-[160%]' set:html={solutions} />
+                <h3 class="text-[18px] md:text-[20px] font-normal mb-4">
+                  Solutions
+                </h3>
+                <p
+                  class="text-[16px] md:text-[18px] text-[#A6A6A6] font-normal leading-[160%]"
+                  set:html={solutions}
+                />
               </div>
             )
           }
-          <hr class='border-t border-[#F3F3F3] my-[28px] md:my-[40px]' />
+          <hr class="border-t border-[#F3F3F3] my-[28px] md:my-[40px]" />
           {
             outcome && (
               <div>
-                <h3 class='text-[18px] md:text-[20px] font-normal mb-4'>Outcome</h3>
-                <p class='text-[16px] md:text-[18px] text-[#A6A6A6] font-normal leading-[160%]' set:html={outcome} />
+                <h3 class="text-[18px] md:text-[20px] font-normal mb-4">
+                  Outcome
+                </h3>
+                <p
+                  class="text-[16px] md:text-[18px] text-[#A6A6A6] font-normal leading-[160%]"
+                  set:html={outcome}
+                />
               </div>
             )
           }
@@ -193,12 +247,16 @@ const otherProjects = allProjects
       </section>
 
       <!-- Mobile & Phone Mockups -->
-      <section class='mb-[80px] md:mb-[160px]'>
+      <section class="mb-[80px] md:mb-[160px]">
         {
           otherImages && otherImages.length > 0 && (
-            <div class='flex flex-col gap-6 md:gap-10'>
+            <div class="flex flex-col gap-6 md:gap-10">
               {otherImages.map((mockup: any) => (
-                <Image src={mockup} alt='Mobile Screen' class='rounded-[16px] md:rounded-[32px] w-full' />
+                <Image
+                  src={mockup}
+                  alt="Mobile Screen"
+                  class="rounded-[16px] md:rounded-[32px] w-full"
+                />
               ))}
             </div>
           )
@@ -206,73 +264,88 @@ const otherProjects = allProjects
       </section>
 
       <!-- Other Projects Section -->
-      <section class='flex flex-col lg:flex-row items-start justify-between mb-[100px]'>
-        <div class='flex flex-col justify-between items-start mb-16 gap-[50px] min-w-[220px] mr-[60px]'>
+      <section
+        class="flex flex-col lg:flex-row items-start justify-between mb-[100px]"
+      >
+        <div
+          class="flex flex-col justify-between items-start mb-16 gap-[50px] min-w-[220px] mr-[60px]"
+        >
           <h2
-            class='text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]'
+            class="text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]"
           >
-            <span class='relative inline-block'>
-              <span class='relative z-10'>Other projects</span>
+            <span class="relative inline-block">
+              <span class="relative z-10">Other projects</span>
               <!-- Hand-drawn Teal Loop -->
               <Image
                 src={circleDraw}
-                alt='circle draw'
-                class='absolute top-1/2 left-1/2 w-[100%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none'
+                alt="circle draw"
+                class="absolute top-1/2 left-1/2 w-[100%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-0 pointer-events-none"
               />
             </span>
           </h2>
           <a
-            href='/portfolio/#projects'
-            class='hidden lg:inline-flex items-center space-x-2 text-black font-normal text-[18px] hover:opacity-70 transition-opacity'
+            href="/portfolio/#projects"
+            class="hidden lg:inline-flex items-center space-x-2 text-black font-normal text-[18px] hover:opacity-70 transition-opacity"
           >
-            <span class='border-b-2 border-black pb-1'>See all project</span>
-            <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <span class="border-b-2 border-black pb-1">See all project</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path
-                d='M15 5H6.90625C6.74049 5 6.58152 4.93415 6.46431 4.81694C6.3471 4.69973 6.28125 4.54076 6.28125 4.375C6.28125 4.20924 6.3471 4.05027 6.46431 3.93306C6.58152 3.81585 6.74049 3.75 6.90625 3.75H15.625C15.7908 3.75 15.9497 3.81585 16.0669 3.93306C16.1842 4.05027 16.25 4.20924 16.25 4.375V13.125C16.25 13.2908 16.1842 13.4497 16.0669 13.5669C15.9497 13.6842 15.7908 13.75 15.625 13.75C15.4592 13.75 15.3003 13.6842 15.1831 13.5669C15.0658 13.4497 15 13.2908 15 13.125V5Z'
-                fill='black'></path>
+                d="M15 5H6.90625C6.74049 5 6.58152 4.93415 6.46431 4.81694C6.3471 4.69973 6.28125 4.54076 6.28125 4.375C6.28125 4.20924 6.3471 4.05027 6.46431 3.93306C6.58152 3.81585 6.74049 3.75 6.90625 3.75H15.625C15.7908 3.75 15.9497 3.81585 16.0669 3.93306C16.1842 4.05027 16.25 4.20924 16.25 4.375V13.125C16.25 13.2908 16.1842 13.4497 16.0669 13.5669C15.9497 13.6842 15.7908 13.75 15.625 13.75C15.4592 13.75 15.3003 13.6842 15.1831 13.5669C15.0658 13.4497 15 13.2908 15 13.125V5Z"
+                fill="black"></path>
               <path
-                d='M15.1817 3.93169C15.2993 3.81411 15.4588 3.74805 15.6251 3.74805C15.7913 3.74805 15.9508 3.81411 16.0684 3.93169C16.186 4.04928 16.2521 4.20876 16.2521 4.37505C16.2521 4.54134 16.186 4.70082 16.0684 4.81841L5.44341 15.4434C5.32583 15.561 5.16634 15.6271 5.00005 15.6271C4.83376 15.6271 4.67428 15.561 4.55669 15.4434C4.43911 15.3258 4.37305 15.1663 4.37305 15.0001C4.37305 14.8338 4.43911 14.6743 4.55669 14.5567L15.1817 3.93169Z'
-                fill='black'></path>
+                d="M15.1817 3.93169C15.2993 3.81411 15.4588 3.74805 15.6251 3.74805C15.7913 3.74805 15.9508 3.81411 16.0684 3.93169C16.186 4.04928 16.2521 4.20876 16.2521 4.37505C16.2521 4.54134 16.186 4.70082 16.0684 4.81841L5.44341 15.4434C5.32583 15.561 5.16634 15.6271 5.00005 15.6271C4.83376 15.6271 4.67428 15.561 4.55669 15.4434C4.43911 15.3258 4.37305 15.1663 4.37305 15.0001C4.37305 14.8338 4.43911 14.6743 4.55669 14.5567L15.1817 3.93169Z"
+                fill="black"></path>
             </svg>
           </a>
         </div>
 
-        <div class='grid grid-cols-1 lg:grid-cols-2 gap-10'>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {
             otherProjects.map((p: any) => (
-              <a href={`/portfolio/projects/${p.slug}`} class='group'>
-                <div class='aspect-[4/3] rounded-[24px] md:max-w-[400px] max-h-[300px] overflow-hidden bg-gray-100 mb-5 border-[4px] border-white shadow-md group-hover:-translate-y-2 transition-transform duration-500'>
+              <a href={`/portfolio/projects/${p.slug}`} class="group">
+                <div class="aspect-[4/3] rounded-[24px] md:max-w-[400px] max-h-[300px] overflow-hidden bg-gray-100 mb-5 border-[4px] border-white shadow-md group-hover:-translate-y-2 transition-transform duration-500">
                   <Image
                     src={p.data.image as any}
                     alt={p.data.title}
-                    class='w-full h-full object-cover group-hover:scale-105 transition-transform duration-700'
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
-                <div class='space-y-1 pl-1 flex flex-col md:max-w-[400px]'>
-                  <div class='flex items-start space-x-4'>
-                    <h3 class='text-[24px] font-bold text-black'>{p.data.client}</h3>
+                <div class="space-y-1 pl-1 flex flex-col md:max-w-[400px]">
+                  <div class="flex items-start space-x-4">
+                    <h3 class="text-[24px] font-bold text-black">
+                      {p.data.client}
+                    </h3>
                     <svg
-                      width='40'
-                      height='20'
-                      viewBox='0 0 44 20'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                      style='min-width: 40px; margin-top:8px;'>
+                      width="40"
+                      height="20"
+                      viewBox="0 0 44 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      style="min-width: 40px; margin-top:8px;"
+                    >
                       <path
-                        d='M1.50012 11.0216C7.23486 10.3883 15.2217 10.2694 21.3176 10.0119C29.2377 9.8674 34.8663 9.86505 35.8906 9.95062C36.4065 9.97971 36.9148 9.97971 38.4653 10.1508'
-                        stroke='black'
-                        stroke-width='3'
-                        stroke-linecap='round'
+                        d="M1.50012 11.0216C7.23486 10.3883 15.2217 10.2694 21.3176 10.0119C29.2377 9.8674 34.8663 9.86505 35.8906 9.95062C36.4065 9.97971 36.9148 9.97971 38.4653 10.1508"
+                        stroke="black"
+                        stroke-width="3"
+                        stroke-linecap="round"
                       />
                       <path
-                        d='M30.6796 1.5C31.5832 2.57473 36.0156 6.55533 39.8199 8.99401C40.9468 9.71634 42.8507 10.2142 41.5265 11.5799C40.2022 12.9455 35.6917 14.9786 33.1682 16.1671C30.6448 17.3557 30.2451 17.638 28.9683 18.2712'
-                        stroke='black'
-                        stroke-width='3'
-                        stroke-linecap='round'
+                        d="M30.6796 1.5C31.5832 2.57473 36.0156 6.55533 39.8199 8.99401C40.9468 9.71634 42.8507 10.2142 41.5265 11.5799C40.2022 12.9455 35.6917 14.9786 33.1682 16.1671C30.6448 17.3557 30.2451 17.638 28.9683 18.2712"
+                        stroke="black"
+                        stroke-width="3"
+                        stroke-linecap="round"
                       />
                     </svg>
                   </div>
-                  <div class='text-[18px] font-[400] text-[#5D5D5D]'>{p.data.category}</div>
+                  <div class="text-[18px] font-[400] text-[#5D5D5D]">
+                    {p.data.category}
+                  </div>
                 </div>
               </a>
             ))
@@ -280,17 +353,23 @@ const otherProjects = allProjects
         </div>
 
         <a
-          href='/portfolio/#projects'
-          class='lg:hidden inline-flex items-center space-x-2 text-black font-normal text-[18px] hover:opacity-70 transition-opacity mt-10'
+          href="/portfolio/#projects"
+          class="lg:hidden inline-flex items-center space-x-2 text-black font-normal text-[18px] hover:opacity-70 transition-opacity mt-10"
         >
-          <span class='border-b-2 border-black pb-1'>See all project</span>
-          <svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'>
+          <span class="border-b-2 border-black pb-1">See all project</span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
-              d='M15 5H6.90625C6.74049 5 6.58152 4.93415 6.46431 4.81694C6.3471 4.69973 6.28125 4.54076 6.28125 4.375C6.28125 4.20924 6.3471 4.05027 6.46431 3.93306C6.58152 3.81585 6.74049 3.75 6.90625 3.75H15.625C15.7908 3.75 15.9497 3.81585 16.0669 3.93306C16.1842 4.05027 16.25 4.20924 16.25 4.375V13.125C16.25 13.2908 16.1842 13.4497 16.0669 13.5669C15.9497 13.6842 15.7908 13.75 15.625 13.75C15.4592 13.75 15.3003 13.6842 15.1831 13.5669C15.0658 13.4497 15 13.2908 15 13.125V5Z'
-              fill='black'></path>
+              d="M15 5H6.90625C6.74049 5 6.58152 4.93415 6.46431 4.81694C6.3471 4.69973 6.28125 4.54076 6.28125 4.375C6.28125 4.20924 6.3471 4.05027 6.46431 3.93306C6.58152 3.81585 6.74049 3.75 6.90625 3.75H15.625C15.7908 3.75 15.9497 3.81585 16.0669 3.93306C16.1842 4.05027 16.25 4.20924 16.25 4.375V13.125C16.25 13.2908 16.1842 13.4497 16.0669 13.5669C15.9497 13.6842 15.7908 13.75 15.625 13.75C15.4592 13.75 15.3003 13.6842 15.1831 13.5669C15.0658 13.4497 15 13.2908 15 13.125V5Z"
+              fill="black"></path>
             <path
-              d='M15.1817 3.93169C15.2993 3.81411 15.4588 3.74805 15.6251 3.74805C15.7913 3.74805 15.9508 3.81411 16.0684 3.93169C16.186 4.04928 16.2521 4.20876 16.2521 4.37505C16.2521 4.54134 16.186 4.70082 16.0684 4.81841L5.44341 15.4434C5.32583 15.561 5.16634 15.6271 5.00005 15.6271C4.83376 15.6271 4.67428 15.561 4.55669 15.4434C4.43911 15.3258 4.37305 15.1663 4.37305 15.0001C4.37305 14.8338 4.43911 14.6743 4.55669 14.5567L15.1817 3.93169Z'
-              fill='black'></path>
+              d="M15.1817 3.93169C15.2993 3.81411 15.4588 3.74805 15.6251 3.74805C15.7913 3.74805 15.9508 3.81411 16.0684 3.93169C16.186 4.04928 16.2521 4.20876 16.2521 4.37505C16.2521 4.54134 16.186 4.70082 16.0684 4.81841L5.44341 15.4434C5.32583 15.561 5.16634 15.6271 5.00005 15.6271C4.83376 15.6271 4.67428 15.561 4.55669 15.4434C4.43911 15.3258 4.37305 15.1663 4.37305 15.0001C4.37305 14.8338 4.43911 14.6743 4.55669 14.5567L15.1817 3.93169Z"
+              fill="black"></path>
           </svg>
         </a>
       </section>

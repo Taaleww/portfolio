@@ -2,15 +2,132 @@
 
 ---
 
-<header class='fixed top-0 left-0 w-full z-50 p-6 md:px-12 pointer-events-none' style='z-index: 200 !important;'>
-  <div class='max-container flex justify-center items-center pointer-events-auto'>
-    <nav class='bg-white/80 backdrop-blur py-2 px-6 gap-6 flex flex-row rounded-full text-[18px] font-[400] shadow-sm'>
-      <a href='#about' class='header-menu'>about</a>
-      <a href='#projects' class='header-menu'>work</a>
-      <a href='#workflow' class='header-menu'>workflow</a>
-      <a href='#contact' class='header-menu'>contact</a>
-      <a href='#resume' class='header-menu'>resume</a>
+<header
+  class="fixed top-0 left-0 w-full z-50 p-6 md:px-12 pointer-events-none"
+  style="z-index: 200 !important;"
+>
+  <div
+    class="max-container flex justify-center items-center pointer-events-auto"
+  >
+    <nav
+      class="bg-white/80 backdrop-blur py-2 px-6 gap-6 flex flex-row rounded-full text-[18px] font-[400] shadow-sm"
+    >
+      <a
+        href="#about"
+        class="header-menu pen-underline hover-about transition-colors">about</a
+      >
+      <a
+        href="#projects"
+        class="header-menu pen-underline hover-project transition-colors"
+        >work</a
+      >
+      <a
+        href="#workflow"
+        class="header-menu pen-underline hover-workflow transition-colors"
+        >workflow</a
+      >
+      <a
+        href="#contact"
+        class="header-menu pen-underline hover-contact transition-colors"
+        >contact</a
+      >
+      <a
+        href="#resume"
+        class="header-menu pen-underline hover-resume transition-colors"
+        >resume</a
+      >
     </nav>
+    <style>
+      .pen-underline {
+        position: relative;
+      }
+      .hover-about {
+        position: relative;
+      }
+      .hover-project {
+        position: relative;
+      }
+      .hover-workflow {
+        position: relative;
+      }
+      .hover-contact {
+        position: relative;
+      }
+      .hover-resume {
+        position: relative;
+      }
+      .hover-about::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/src/assets/hover/hover-about.png") bottom/contain
+          no-repeat;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        translate: 0 4px;
+      }
+      .hover-project:hover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/src/assets/hover/hover-work.png") bottom/contain
+          no-repeat;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        translate: 0 4px;
+      }
+      .hover-workflow:hover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/src/assets/hover/hover-workflow.png") bottom/contain
+          no-repeat;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        translate: 0 4px;
+      }
+      .hover-contact:hover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/src/assets/hover/hover-contact.png") bottom/contain
+          no-repeat;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        translate: 0 4px;
+      }
+      .hover-resume:hover::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("/src/assets/hover/hover-resume.png") bottom/contain
+          no-repeat;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        translate: 0 4px;
+      }
+
+      .hover-project:hover::after {
+        opacity: 1;
+      }
+      .hover-about:hover::after {
+        opacity: 1;
+      }
+      .hover-workflow:hover::after {
+        opacity: 1;
+      }
+      .hover-contact:hover::after {
+        opacity: 1;
+      }
+      .hover-resume:hover::after {
+        opacity: 1;
+      }
+    </style>
   </div>
 </header>
 

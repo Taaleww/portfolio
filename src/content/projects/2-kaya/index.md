@@ -4,7 +4,7 @@ category: "Web design"
 description: "A home design and construction company website crafted to showcase quality craftsmanship and modern living."
 image: "./cover.png"
 overviewImage: "./overview.png"
-liveUrl: "https://project-beta.example.com"
+liveUrl: "https://kaya-inter.com/en/"
 repoUrl: "https://github.com/user/project-beta"
 techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false

@@ -4,7 +4,7 @@ category: "Web design"
 description: "A professional logistics website crafted to showcase freight forwarding, and import-export with a modern and trustworthy digital experience."
 image: "./cover.png"
 overviewImage: "./overview.png"
-liveUrl: "https://project-beta.example.com"
+liveUrl: "https://fei.co.th/en/"
 repoUrl: "https://github.com/user/project-beta"
 techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false

@@ -4,7 +4,7 @@ category: "Web design"
 description: "A Nok Fan Club rewards platform where members can redeem points for exclusive deals, merchandise, and exclusive privileges."
 image: "./cover.png"
 overviewImage: "./overview.png"
-liveUrl: "https://project-gamma.example.com"
+liveUrl: "https://nokdeal.nokair.com/login"
 repoUrl: "https://github.com/user/project-gamma"
 techStack: ["Vue.js", "Tailwind CSS", "Strapi"]
 featured: true

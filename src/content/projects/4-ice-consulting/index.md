@@ -4,7 +4,7 @@ category: "Landing page , Dark theme"
 description: "A corporate website crafted to showcase cloud-based ERP expertise and digital business solutions."
 image: "./cover.png"
 overviewImage: "./overview.png"
-liveUrl: "https://project-beta.example.com"
+liveUrl: "https://oracle-netsuite.iceconsulting.co.th/"
 repoUrl: "https://github.com/user/project-beta"
 techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
