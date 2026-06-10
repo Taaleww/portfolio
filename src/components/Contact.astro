@@ -1,15 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import circleDraw from "../assets/circle-draw.svg";
-import contactCard from "../assets/contact-card.png";
+import { Image } from 'astro:assets';
+import circleDraw from '../assets/circle-draw.svg';
+import contactCard from '../assets/contact-card.png';
+import contactCardMobile from '../assets/contact-card-mobile.png';
 ---
 
-<section
-  id="contact"
-  class="py-20 md:py-32 max-container px-6 md:px-12 lg:px-24 !pb-0"
->
+<section id='contact' class='py-20 md:py-32 max-container px-6 md:px-12 lg:px-24 !pb-0'>
   <!-- Top text area -->
-  <div class="flex items-center justify-center gap-6 mb-[-120px]">
+  <div class='flex items-center justify-center gap-6 mb-[-120px]'>
     <!-- Curved arrow -->
     <!-- <div class="relative flex-shrink-0 -translate-x-1/2 left-[-5dvw]">
       <svg
@@ -26,47 +24,58 @@ import contactCard from "../assets/contact-card.png";
     </div> -->
 
     <!-- Text -->
-    <div
-      class="font-script text-2xl md:text-[32px] leading-snug text-center md:text-center"
-    >
+    <div class='font-script text-2xl md:text-[32px] leading-snug text-center md:text-center'>
       <span>If you're interested in working together</span>
       <br />
       <span>tap this to </span>
-      <span class="relative inline-block mx-1">
-        <span class="relative z-10">contact me</span>
+      <span class='relative inline-block mx-1'>
+        <span class='relative z-10'>contact me</span>
         <Image
           src={circleDraw}
-          alt="circle draw"
-          class="absolute top-[60%] left-1/2 w-[110%] min-w-[110px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"
-          quality="high"
+          alt='circle draw'
+          class='absolute top-[60%] left-1/2 w-[110%] min-w-[110px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none'
+          quality='high'
         />
       </span>
       <span>:)</span>
     </div>
   </div>
 
-  <!-- Envelope card -->
-  <div
-    id="envelope-wrapper"
-    class="relative w-full max-w-[900px] mx-auto cursor-pointer z-10"
-  >
+  <!-- Envelope card - desktop -->
+  <div id='envelope-wrapper' class='hidden md:block relative w-full max-w-[900px] mx-auto cursor-pointer z-10'>
     <!-- The envelope container - clips the card -->
-    <div
-      class="envelope-container relative w-full overflow-hidden"
-      style="aspect-ratio: 16/7;"
-    >
+    <div class='envelope-container relative w-full overflow-hidden' style='aspect-ratio: 16/7;'>
       <!-- Card image that slides up on hover -->
       <a
-        href="mailto:nantakarn.1.01@gmail.com"
-        id="envelope-card"
-        class="absolute inset-0 w-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] block"
-        style="transform: translateY(35%) rotate(0deg); transform-origin: center center;"
+        href='mailto:nantakarn.1.01@gmail.com'
+        id='envelope-card'
+        class='absolute inset-0 w-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] block'
+        style='transform: translateY(35%) rotate(0deg); transform-origin: center center;'
       >
         <Image
           src={contactCard}
           alt="Contact Card - Let's Work Together"
-          class="w-full h-auto pointer-events-none select-none"
-          quality="high"
+          class='w-full h-auto pointer-events-none select-none'
+          quality='high'
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- Envelope card - mobile -->
+  <div
+    id='envelope-wrapper-mobile'
+    class='md:hidden relative top-40 w-full max-w-[900px] mx-auto px-4 cursor-pointer z-10'
+  >
+    <!-- The envelope container - clips the card -->
+    <div class='envelope-container relative w-full'>
+      <!-- Card image that slides up on hover -->
+      <a href='mailto:nantakarn.1.01@gmail.com' id='envelope-card-mobile' class='absolute w-full block'>
+        <Image
+          src={contactCardMobile}
+          alt="Contact Card - Let's Work Together"
+          class='w-full h-auto pointer-events-none select-none pb-[68px]'
+          quality='high'
         />
       </a>
     </div>
