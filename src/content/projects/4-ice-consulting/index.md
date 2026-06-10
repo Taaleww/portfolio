@@ -1,6 +1,6 @@
 ---
 title: "ICE Oracle netsuite"
-category: "Landing page , Dark theme"
+category: "Oracle netsuite"
 description: "A corporate website crafted to showcase cloud-based ERP expertise and digital business solutions."
 image: "./cover.png"
 overviewImage: "./overview.png"

@@ -1,6 +1,6 @@
 ---
 title: "Nok Deal"
-category: "Web design"
+category: "E-commerce platform"
 description: "A Nok Fan Club rewards platform where members can redeem points for exclusive deals, merchandise, and exclusive privileges."
 image: "./cover.png"
 overviewImage: "./overview.png"

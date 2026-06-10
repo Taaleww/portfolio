@@ -1,6 +1,6 @@
 ---
 title: "FEI Logistic"
-category: "Web design"
+category: "Logistic"
 description: "A professional logistics website crafted to showcase freight forwarding, and import-export with a modern and trustworthy digital experience."
 image: "./cover.png"
 overviewImage: "./overview.png"

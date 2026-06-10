@@ -1,6 +1,6 @@
 ---
 title: "Kaya Inter"
-category: "Web design"
+category: "Home construction"
 description: "A home design and construction company website crafted to showcase quality craftsmanship and modern living."
 image: "./cover.png"
 overviewImage: "./overview.png"

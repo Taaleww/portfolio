@@ -1,10 +1,10 @@
 ---
 title: "Remood"
-category: "Web design"
+category: "Interior and exterior materials website"
 description: "A modern interior and exterior materials website crafted to inspire better living spaces."
 image: "./cover.png"
 overviewImage: "./overview.png"
-liveUrl: "https://remood.co.th/"
+liveUrl: "https://remood.co.th/?gad_source=1&gad_campaignid=22247182761&gbraid=0AAAAA-MQZ1_okZimFFdOSOSnhcaQ6NbNq&gclid=Cj0KCQjwlqTRBhCBARIsANrkrxhy6v_cgUdWcS3XMjbiP2KQ6fkVNGO2pk9v4XDI5KUgzbVgtB3IlZkaAr25EALw_wcB"
 repoUrl: "https://github.com/user/project-alpha"
 techStack: ["Astro", "Tailwind CSS", "React"]
 featured: true
