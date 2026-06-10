@@ -25,7 +25,7 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
       <div className='bg-[#F5F5F5] w-full rounded-[24px]'>
         <div className='max-container pt-8 md:pt-[80px] pb-[120px] px-6 md:px-12 lg:px-24'>
           {/* Section Header */}
-          <div className='flex flex-col items-center mb-[60px]'>
+          <div className='flex flex-col items-center mb-[60px]' data-animate='fade-up'>
             <div className='font-script text-[24px] md:text-[36px] flex items-center justify-center space-x-1.5 text-black mb-1'>
               <span>Scroll to</span>
               <span className='relative inline-block mx-1'>
@@ -74,10 +74,12 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
 
           {/* Project Grid */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-20 lg:gap-x-20'>
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <a
                 href={`/portfolio/projects/${project.slug}`}
                 key={project.client}
+                data-animate='fade-up'
+                data-delay={(index % 2) * 100}
                 className='group cursor-pointer flex flex-col min-w-0'>
                 {/* Image Container */}
                 <div
@@ -93,9 +95,7 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
                 {/* Text Container */}
                 <div className='space-y-1 pl-1 flex flex-col min-w-0'>
                   <div className='flex items-start space-x-2 min-w-0'>
-                    <h3 className='text-[18px] md:text-[24px] font-bold text-black truncate shrink'>
-                      {project.title}
-                    </h3>
+                    <h3 className='text-[18px] md:text-[24px] font-bold text-black truncate shrink'>{project.title}</h3>
                     <svg
                       width='44'
                       height='20'

@@ -7,7 +7,7 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
 
 <section id='contact' class='py-20 md:py-32 max-container px-6 md:px-12 lg:px-24 !pb-0'>
   <!-- Top text area -->
-  <div class='flex items-center justify-center gap-6 mb-[-120px]'>
+  <div class='flex items-center justify-center gap-6 mb-[-120px]' data-animate='fade-up'>
     <!-- Curved arrow -->
     <!-- <div class="relative flex-shrink-0 -translate-x-1/2 left-[-5dvw]">
       <svg
@@ -42,7 +42,7 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
   </div>
 
   <!-- Envelope card - desktop -->
-  <div id='envelope-wrapper' class='hidden md:block relative w-full max-w-[900px] mx-auto cursor-pointer z-10'>
+  <div id='envelope-wrapper' class='hidden md:block relative w-full max-w-[900px] mx-auto cursor-pointer z-10' data-animate='fade-up' data-delay='100'>
     <!-- The envelope container - clips the card -->
     <div class='envelope-container relative w-full overflow-hidden' style='aspect-ratio: 16/7;'>
       <!-- Card image that slides up on hover -->
@@ -66,6 +66,7 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
   <div
     id='envelope-wrapper-mobile'
     class='md:hidden relative top-40 w-full max-w-[900px] mx-auto px-4 cursor-pointer z-10'
+    data-animate='fade-up'
   >
     <!-- The envelope container - clips the card -->
     <div class='envelope-container relative w-full'>

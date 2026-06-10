@@ -10,44 +10,50 @@ import hover05 from "../assets/hover/hover-05.png";
 ---
 
 <section
+  id="hero-section"
   class="relative min-h-screen flex flex-col justify-end pb-5 lg:pb-6 px-[20px] lg:px-[40px] overflow-hidden"
 >
   <!-- Background Image -->
   <div class="absolute inset-0 -z-10 bg-white">
-    <Image
-      src={bgHero}
-      alt="Hero Background"
-      class="w-full h-full object-cover scale-[1.5] absolute top-[20%] left-[25%]"
-      quality="high"
-    />
-    <!-- Optional: Gradient overlay to ensure text readability at the bottom -->
+    <div id="hero-parallax" class="absolute inset-0 will-change-transform hero-bg-reveal">
+      <Image
+        src={bgHero}
+        alt="Hero Background"
+        class="w-full h-full object-cover scale-[1.5] absolute top-[20%] left-[25%]"
+        quality="high"
+      />
+    </div>
+    <!-- Gradient overlay -->
     <div
       class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"
     >
     </div>
   </div>
+
   <div class="flex flex-col items-start">
     <div
       class="flex flex-col items-end gap-[62px] w-full mb-[32px] md:mb-[52px]"
     >
+      <!-- Top-right specialty text — slides in from right -->
       <div class="flex justify-end">
         <div
           class="flex flex-col space-y-2 text-left text-[16px] lg:text-[24px] font-[400] text-black mr-[5dvw] lg:mr-[10dvw] font-script"
         >
-          <a class="hover:text-black transition-colors">UX/UI Designer</a>
-          <a class="hover:text-black transition-colors"
-            >Wireframing & Prototyping</a
-          >
-          <a class="hover:text-black transition-colors">Design Skill</a>
-          <a class="hover:text-black transition-colors">Basic Coding</a>
+          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.05s">UX/UI Designer</a>
+          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.15s">Wireframing &amp; Prototyping</a>
+          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.25s">Design Skill</a>
+          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.35s">Basic Coding</a>
         </div>
       </div>
+
+      <!-- Bottom-left meta — slides up -->
       <div class="w-full items-start space-y-2">
-        <div class="text-[16px] lg:text-[24px] font-[400] text-black">
+        <div class="text-[16px] lg:text-[24px] font-[400] text-black hero-slide-up" style="animation-delay: 0.1s">
           ©2026
         </div>
         <p
-          class="text-[16px] lg:text-[24px] font-[400] leading-[160%] text-black max-w-[620px]"
+          class="text-[16px] lg:text-[24px] font-[400] leading-[160%] text-black max-w-[620px] hero-slide-up"
+          style="animation-delay: 0.25s"
         >
           Designing intuitive digital experiences through thoughtful UX and
           clean interfaces.
@@ -55,15 +61,15 @@ import hover05 from "../assets/hover/hover-05.png";
       </div>
     </div>
 
-    <div class="page-fade-in">
-      <!-- <Image src={nameHero} alt='Hero Title' class='w-full h-full object-cover' quality='high' /> -->
+    <div>
       <h1
         class="text-[14.2dvw] tracking-tighter text-black select-none leading-none !h-min flex items-end gap-0 overflow-visible"
         style="color: rgba(0, 0, 0); letter-spacing: 1%;"
       >
         <!-- Na -->
         <div
-          class="relative group ml-[-1dvw] leading-[75%] cursor-pointer overflow-visible"
+          class="relative group ml-[-1dvw] leading-[75%] cursor-pointer overflow-visible hero-letter"
+          style="animation-delay: 0.15s"
         >
           <span class="relative z-10">Na</span>
           <div
@@ -80,7 +86,8 @@ import hover05 from "../assets/hover/hover-05.png";
 
         <!-- nt -->
         <div
-          class="relative group leading-[75%] cursor-pointer overflow-visible"
+          class="relative group leading-[75%] cursor-pointer overflow-visible hero-letter"
+          style="animation-delay: 0.23s"
         >
           <span class="relative z-10">nt</span>
           <div
@@ -97,7 +104,8 @@ import hover05 from "../assets/hover/hover-05.png";
 
         <!-- ha -->
         <div
-          class="relative group leading-[75%] cursor-pointer overflow-visible"
+          class="relative group leading-[75%] cursor-pointer overflow-visible hero-letter"
+          style="animation-delay: 0.31s"
         >
           <span class="relative z-10">ha</span>
           <div
@@ -114,7 +122,8 @@ import hover05 from "../assets/hover/hover-05.png";
 
         <!-- kan -->
         <div
-          class="relative group leading-[75%] cursor-pointer overflow-visible"
+          class="relative group leading-[75%] cursor-pointer overflow-visible hero-letter"
+          style="animation-delay: 0.39s"
         >
           <span class="relative z-10">kan</span>
           <div
@@ -131,7 +140,8 @@ import hover05 from "../assets/hover/hover-05.png";
 
         <!-- R. -->
         <div
-          class="relative group ml-[3dvw] md:ml-[5dvw] lg:ml-[6dvw] leading-[75%] cursor-pointer overflow-visible"
+          class="relative group ml-[3dvw] md:ml-[5dvw] lg:ml-[6dvw] leading-[75%] cursor-pointer overflow-visible hero-letter"
+          style="animation-delay: 0.47s"
         >
           <span class="relative z-10">R.</span>
           <div
@@ -149,3 +159,120 @@ import hover05 from "../assets/hover/hover-05.png";
     </div>
   </div>
 </section>
+
+<style>
+  /* ── Entrance Keyframes ── */
+  @keyframes heroSlideUp {
+    from {
+      opacity: 0;
+      transform: translateY(55px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroSlideRight {
+    from {
+      opacity: 0;
+      transform: translateX(35px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes heroLetterReveal {
+    from {
+      opacity: 0;
+      transform: translateY(80px) skewY(3deg);
+      filter: blur(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) skewY(0deg);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes heroBgReveal {
+    from {
+      opacity: 0;
+      transform: scale(1.08);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* ── Animation Classes ── */
+  .hero-slide-up {
+    opacity: 0;
+    animation: heroSlideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .hero-slide-right {
+    opacity: 0;
+    animation: heroSlideRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Big name letters — with skew + blur for a premium cinematic feel */
+  .hero-letter {
+    opacity: 0;
+    animation: heroLetterReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Background subtle zoom reveal */
+  .hero-bg-reveal {
+    animation: heroBgReveal 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+</style>
+
+<script>
+  function initHeroParallax() {
+    const section = document.getElementById('hero-section');
+    const parallax = document.getElementById('hero-parallax');
+    if (!section || !parallax) return;
+
+    let currentX = 0;
+    let currentY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    let rafId: number;
+
+    // Smooth lerp towards target position
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+    const tick = () => {
+      currentX = lerp(currentX, targetX, 0.06);
+      currentY = lerp(currentY, targetY, 0.06);
+      parallax.style.transform = `translate(${currentX}px, ${currentY}px)`;
+      rafId = requestAnimationFrame(tick);
+    };
+
+    section.addEventListener('mousemove', (e) => {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5);
+      const y = ((e.clientY - rect.top) / rect.height - 0.5);
+      targetX = x * -18;
+      targetY = y * -10;
+    });
+
+    section.addEventListener('mouseleave', () => {
+      targetX = 0;
+      targetY = 0;
+    });
+
+    rafId = requestAnimationFrame(tick);
+
+    // Cleanup on view transition
+    document.addEventListener('astro:before-swap', () => {
+      cancelAnimationFrame(rafId);
+    }, { once: true });
+  }
+
+  document.addEventListener('astro:page-load', initHeroParallax);
+</script>

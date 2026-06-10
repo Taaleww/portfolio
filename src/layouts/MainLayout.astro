@@ -39,3 +39,27 @@ const { title = 'Nanthakan R. | Portfolio', description = 'A UI/UX Designer Port
     </div>
   </body>
 </html>
+
+<script>
+  function initScrollReveal() {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target); // Animate only once
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('[data-animate]');
+    elements.forEach((elem) => observer.observe(elem));
+  }
+
+  document.addEventListener('astro:page-load', initScrollReveal);
+</script>

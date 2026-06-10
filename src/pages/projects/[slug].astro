@@ -56,7 +56,7 @@ const otherProjects = allProjects
       <section
         class="flex flex-col md:flex-row gap-[40px] md:gap-[100px] items-start"
       >
-        <div class="font-normal w-full md:max-w-[500px]">
+        <div class="font-normal w-full md:max-w-[500px]" data-animate="fade-up">
           <h1
             class="font-script text-[32px] md:text-[56px] font-normal tracking-tight leading-[140%] mb-[10px]"
             style="letter- spacing: 1%;"
@@ -93,13 +93,13 @@ const otherProjects = allProjects
                       fill="black"
                     />
                   </svg>
-                  <div class="absolute bottom-0 left-0 w-[calc(100%-28px)] h-[2px] bg-black transition-all duration-300 group-hover:w-full"></div>
+                  <div class="absolute bottom-0 left-0 w-[calc(100%-28px)] h-[2px] bg-black transition-all duration-300"></div>
                 </div>
               </a>
         </div>
 
         <!-- Hero Mockup (Laptop) -->
-        <div class="relative">
+        <div class="relative" data-animate="fade-up" data-delay="200">
           <div
             class="rounded-[32px] overflow-hidden bg-gray-200 aspect-[4/3] w-full h-full lg:w-[600px] lg:h-[450px]"
             style="box-shadow: 0px 0px 10px 0px #00000040; border: 4px solid #FFFFFF"
@@ -127,11 +127,13 @@ const otherProjects = allProjects
       <hr
         class="border-0 h-[1px] my-10"
         style="background-image: linear-gradient(to right, #C8C8C8 50%, transparent 50%); background-size: 12px 1px; background-repeat: repeat-x;"
+        data-animate="fade-up"
       />
 
       <!-- About Project Section -->
       <section
         class="flex flex-col md:flex-row justify-between gap-6 md:gap-[120px] mb-[60px]"
+        data-animate="fade-up"
       >
         <h2
           class="text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]"
@@ -168,7 +170,7 @@ const otherProjects = allProjects
       <!-- Large overview image section -->
       {
         overviewImage && (
-          <section class="mb-[60px] md:mb-[100px]">
+          <section class="mb-[60px] md:mb-[100px]" data-animate="scale-up">
             <div class="rounded-[16px] md:rounded-[16px] bg-white shadow-sm overflow-hidden">
               <Image
                 src={overviewImage as any}
@@ -184,7 +186,7 @@ const otherProjects = allProjects
       <section
         class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-[60px] md:mb-[100px]"
       >
-        <div class="lg:col-span-6">
+        <div class="lg:col-span-6" data-animate="fade-up">
           <h2
             class="text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]"
           >
@@ -199,10 +201,10 @@ const otherProjects = allProjects
             </span>
           </h2>
         </div>
-        <div class="lg:col-span-6">
+        <div class="lg:col-span-6" data-animate="fade-up" data-delay="100">
           {
             challenges && (
-              <div>
+              <div data-animate="fade-up">
                 <h3 class="text-[18px] md:text-[20px] font-normal mb-4">
                   Challenges
                 </h3>
@@ -213,10 +215,10 @@ const otherProjects = allProjects
               </div>
             )
           }
-          <hr class="border-t border-[#F3F3F3] my-[28px] md:my-[40px]" />
+          <hr class="border-t border-[#F3F3F3] my-[28px] md:my-[40px]" data-animate="fade-up" />
           {
             solutions && (
-              <div>
+              <div data-animate="fade-up" data-delay="100">
                 <h3 class="text-[18px] md:text-[20px] font-normal mb-4">
                   Solutions
                 </h3>
@@ -227,10 +229,10 @@ const otherProjects = allProjects
               </div>
             )
           }
-          <hr class="border-t border-[#F3F3F3] my-[28px] md:my-[40px]" />
+          <hr class="border-t border-[#F3F3F3] my-[28px] md:my-[40px]" data-animate="fade-up" />
           {
             outcome && (
-              <div>
+              <div data-animate="fade-up" data-delay="100">
                 <h3 class="text-[18px] md:text-[20px] font-normal mb-4">
                   Outcome
                 </h3>
@@ -249,12 +251,14 @@ const otherProjects = allProjects
         {
           otherImages && otherImages.length > 0 && (
             <div class="flex flex-col gap-6 md:gap-6">
-              {otherImages.map((mockup: any) => (
-                <Image
-                  src={mockup}
-                  alt="Mobile Screen"
-                  class="rounded-[16px] md:rounded-[16px] w-full"
-                />
+              {otherImages.map((mockup: any, index: number) => (
+                <div data-animate="fade-up" data-delay={index % 2 === 0 ? "100" : "200"}>
+                  <Image
+                    src={mockup}
+                    alt="Mobile Screen"
+                    class="rounded-[16px] md:rounded-[16px] w-full"
+                  />
+                </div>
               ))}
             </div>
           )
@@ -267,6 +271,7 @@ const otherProjects = allProjects
       >
         <div
           class="flex flex-col justify-between items-start mb-16 gap-[50px] min-w-[220px] mr-[60px]"
+          data-animate="fade-up"
         >
           <h2
             class="text-[32px] md:text-[48px] mt-[-16px] font-normal font-script relative inline-block leading-[140%] min-w-[204px]"
@@ -304,15 +309,15 @@ const otherProjects = allProjects
                   fill="black"
                 />
               </svg>
-              <div class="absolute bottom-0 left-0 w-[calc(100%-28px)] h-[2px] bg-black transition-all duration-300 group-hover:w-full"></div>
+              <div class="absolute bottom-0 left-0 w-[calc(100%-28px)] h-[2px] bg-black transition-all duration-300"></div>
             </div>
           </a>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {
-            otherProjects.map((p: any) => (
-              <a href={`/portfolio/projects/${p.slug}`} class="group">
+            otherProjects.map((p: any, index: number) => (
+              <a href={`/portfolio/projects/${p.slug}`} class="group" data-animate="fade-up" data-delay={index * 100}>
                 <div class="aspect-[4/3] rounded-[24px] md:max-w-[400px] max-h-[300px] overflow-hidden bg-gray-100 mb-5 border-[4px] border-white shadow-md group-hover:-translate-y-2 transition-transform duration-500">
                   <Image
                     src={p.data.image as any}
@@ -379,7 +384,7 @@ const otherProjects = allProjects
                 fill="black"
               />
             </svg>
-            <div class="absolute bottom-0 left-0 w-[calc(100%-28px)] h-[2px] bg-black transition-all duration-300 group-hover:w-full"></div>
+            <div class="absolute bottom-0 left-0 w-[calc(100%-28px)] h-[2px] bg-black transition-all duration-300"></div>
           </div>
         </a>
       </section>
