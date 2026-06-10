@@ -1,83 +1,76 @@
 ---
-import { Image } from "astro:assets";
-import circleDraw from "../assets/circle-draw.svg";
-import profileIcon from "../assets/profile-icon.png";
-import toolFigma from "../assets/tool-logo/figma.png";
-import toolPhotoshop from "../assets/tool-logo/photo-shop.png";
-import toolIllustrator from "../assets/tool-logo/illustrator.png";
-import toolGemini from "../assets/tool-logo/gemini.png";
-import toolGpt from "../assets/tool-logo/gpt.png";
+import { Image } from 'astro:assets';
+import circleDraw from '../assets/circle-draw.svg';
+import profileIcon from '../assets/profile-icon.png';
+import toolFigma from '../assets/tool-logo/figma.png';
+import toolPhotoshop from '../assets/tool-logo/photo-shop.png';
+import toolIllustrator from '../assets/tool-logo/illustrator.png';
+import toolGemini from '../assets/tool-logo/gemini.png';
+import toolGpt from '../assets/tool-logo/gpt.png';
 
 const pillColors = [
-  "rgba(243, 216, 145, 1)",
-  "rgba(243, 185, 78, 1)",
-  "rgba(138, 226, 230, 0.98)",
-  "rgba(209, 223, 183, 1)",
-  "rgba(212, 224, 212, 1)",
+  'rgba(243, 216, 145, 1)',
+  'rgba(243, 185, 78, 1)',
+  'rgba(138, 226, 230, 0.98)',
+  'rgba(209, 223, 183, 1)',
+  'rgba(212, 224, 212, 1)',
 ];
 
 const HARD_SKILL = [
-  "UX/UI Design Process",
-  "Graphic Design",
-  "Wireframing & Prototyping",
-  "Basic Coding",
-  "Design Skill",
+  'UX/UI Design Process',
+  'Graphic Design',
+  'Wireframing & Prototyping',
+  'Basic Coding',
+  'Design Skill',
 ];
 
-const SOFT_SKILL = [
-  "Collaborative & Teamwork",
-  "Learning & Adaptability",
-  "Management",
-];
+const SOFT_SKILL = ['Collaborative & Teamwork', 'Learning & Adaptability', 'Management'];
 
 const TOOLS = [
   {
-    name: "Figma",
+    name: 'Figma',
     icon: toolFigma,
-    imgClass: "w-full h-full scale-[1.3] object-cover",
+    imgClass: 'w-full h-full scale-[1.3] object-cover',
   },
   {
-    name: "Photoshop",
+    name: 'Photoshop',
     icon: toolPhotoshop,
-    imgClass: "w-full h-full object-cover rounded-xl",
+    imgClass: 'w-full h-full object-cover rounded-xl',
   },
   {
-    name: "Illustrator",
+    name: 'Illustrator',
     icon: toolIllustrator,
-    imgClass: "w-full h-full object-cover rounded-xl",
+    imgClass: 'w-full h-full object-cover rounded-xl',
   },
   {
-    name: "Gemini",
+    name: 'Gemini',
     icon: toolGemini,
-    imgClass: "w-[42px] h-[42px] object-contain",
+    imgClass: 'w-[42px] h-[42px] object-contain',
   },
   {
-    name: "ChatGPT",
+    name: 'ChatGPT',
     icon: toolGpt,
-    imgClass: "w-full h-full object-cover rounded-xl",
+    imgClass: 'w-full h-full object-cover rounded-xl',
   },
 ];
 
 const PILL_STYLE =
-  "text-black px-5 py-2.5 rounded-full font-medium text-[15px] whitespace-nowrap cursor-grab active:cursor-grabbing border-2 border-white shadow-sm pointer-events-auto select-none";
+  'text-black px-5 py-2.5 rounded-full font-medium text-[15px] whitespace-nowrap cursor-grab active:cursor-grabbing border-2 border-white shadow-sm pointer-events-auto select-none';
 ---
 
-<section
-  id="about"
-  class="pt-[80px] md:pt-[120px] pb-[100px] max-container space-y-[60px]"
->
+<section id='about' class='pt-[80px] md:pt-[120px] pb-[100px] max-container space-y-[60px]'>
   <!-- Introduction header -->
-  <div class="text-center mb-10 md:mb-[60px]">
-    <h2 class="text-[32px] md:text-[56px] font-normal h-fit">
-      <span class="font-script relative z-10 ml-[-8px]">
+  <div class='text-center mb-10 md:mb-[60px]'>
+    <h2 class='text-[32px] md:text-[56px] font-normal h-fit'>
+      <span class='font-script relative z-10 ml-[-8px]'>
         Let me
-        <span class="relative inline-block">
-          <span class="relative z-10">introduce</span>
+        <span class='relative inline-block'>
+          <span class='relative z-10'>introduce</span>
           <Image
             src={circleDraw}
-            alt="circle draw"
-            class="absolute top-[60%] left-1/2 w-[115%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none"
-            quality="high"
+            alt='circle draw'
+            class='absolute top-[60%] left-1/2 w-[115%] min-w-[120px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none'
+            quality='high'
           />
         </span>
         myself
@@ -86,47 +79,29 @@ const PILL_STYLE =
   </div>
 
   <!-- Introduction content -->
-  <div
-    class="grid grid-cols-9 gap-6 w-full max-w-[1200px] mx-auto px-5 lg:px-0"
-  >
+  <div class='grid grid-cols-9 gap-6 w-full max-w-[1200px] mx-auto px-5 lg:px-0'>
     <!-- Card 1: INTRODUCE -->
-    <div
-      class="intro-card col-span-9 md:col-span-5 min-h-[372px] justify-between flex flex-col items-start"
-    >
-      <div class="flex justify-between items-start mb-8">
-        <h3 class="text-[20px] md:text-[24px] font-bold font-script">
-          INTRODUCE
-        </h3>
+    <div class='intro-card col-span-9 md:col-span-5 min-h-[372px] justify-between flex flex-col items-start'>
+      <div class='flex justify-between items-start mb-8'>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>INTRODUCE</h3>
       </div>
       <div>
-        <p class="text-light">
-          UX/UI Designer with 2+ years of experience designing user-centered
-          digital products across web and mobile platforms. Skilled in
-          translating user insights and business requirements into intuitive,
-          scalable design solutions through wireframing, prototyping, and
-          usability testing. Strong collaborator experienced in working with
-          cross-functional teams to deliver high-quality, development-ready
-          designs.
+        <p class='text-light'>
+          UX/UI Designer with 2+ years of experience designing user-centered digital products across web and mobile
+          platforms. Skilled in translating user insights and business requirements into intuitive, scalable design
+          solutions through wireframing, prototyping, and usability testing. Strong collaborator experienced in working
+          with cross-functional teams to deliver high-quality, development-ready designs.
         </p>
 
         <!-- Mini profile badge -->
-        <div class="mt-[20px]">
-          <div class="flex items-center gap-4">
-            <div class="rounded-full">
-              <Image
-                src={profileIcon}
-                alt="profile icon"
-                class="h-[56px] w-[56px]"
-                quality="high"
-              />
+        <div class='mt-[20px]'>
+          <div class='flex items-center gap-4'>
+            <div class='rounded-full'>
+              <Image src={profileIcon} alt='profile icon' class='h-[56px] w-[56px]' quality='high' />
             </div>
             <div>
-              <p class="text-[16px] text-black leading-[29px]">
-                Nanthakan Rujilakhanon
-              </p>
-              <p class="text-[14px] text-light leading-[20px]">
-                UX/UI Designer
-              </p>
+              <p class='text-[16px] text-black leading-[29px]'>Nanthakan Rujilakhanon</p>
+              <p class='text-[14px] text-light leading-[20px]'>UX/UI Designer</p>
             </div>
           </div>
         </div>
@@ -134,97 +109,62 @@ const PILL_STYLE =
     </div>
 
     <!-- Card 2: EDUCATION & EXPERIENCE-->
-    <div
-      class="intro-card col-span-9 md:col-span-4 min-h-[372px] gap-10 flex flex-col items-start"
-    >
-      <div class="w-full flex flex-col gap-4">
-        <h3 class="text-[20px] md:text-[24px] font-bold font-script">
-          EDUCATION
-        </h3>
+    <div class='intro-card col-span-9 md:col-span-4 min-h-[372px] gap-10 flex flex-col items-start'>
+      <div class='w-full flex flex-col gap-4'>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>EDUCATION</h3>
 
         <!-- Education -->
-        <div class="w-full">
-          <div
-            class="flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0"
-          >
-            <p class="text-[16px] text-black font-[500] leading-[22px]">
-              Bachelor of Computer Engineering
-            </p>
-            <span class="text-xs text-light leading-[20px]"
-              >August 2019 - May 2023</span
-            >
+        <div class='w-full'>
+          <div class='flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0'>
+            <p class='text-[16px] text-black font-[500] leading-[22px]'>Bachelor of Computer Engineering</p>
+            <span class='text-xs text-light leading-[20px]'>August 2019 - May 2023</span>
           </div>
-          <p class="text-xs text-light leading-[20px] md:max-w-[50%]">
+          <p class='text-xs text-light leading-[20px] md:max-w-[50%]'>
             King Mongkut's University of Technology Thonburi
           </p>
         </div>
       </div>
 
-      <div class="w-full flex flex-col gap-4">
-        <h3 class="text-[20px] md:text-[24px] font-bold font-script">
-          EXPERIENCE
-        </h3>
+      <div class='w-full flex flex-col gap-4'>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>EXPERIENCE</h3>
 
         <!-- Experience 1 -->
-        <div class="w-full">
-          <div
-            class="flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0"
-          >
-            <p class="text-[16px] text-black font-[500] leading-[22px]">
-              CalCal Co., Ltd.
-            </p>
-            <span class="text-xs text-light leading-[20px]"
-              >June 2022 - August 2022</span
-            >
+        <div class='w-full'>
+          <div class='flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0'>
+            <p class='text-[16px] text-black font-[500] leading-[22px]'>CalCal Co., Ltd.</p>
+            <span class='text-xs text-light leading-[20px]'>June 2022 - August 2022</span>
           </div>
-          <p class="text-xs text-light leading-[20px]">
-            UX/UI Designer (Internship)
-          </p>
+          <p class='text-xs text-light leading-[20px]'>UX/UI Designer (Internship)</p>
         </div>
 
         <!-- Experience 2 -->
-        <div class="w-full">
-          <div
-            class="flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0"
-          >
-            <p class="text-[16px] text-black font-[500] leading-[22px]">
-              Geminine Studio
-            </p>
-            <span class="text-xs text-light leading-[20px]"
-              >August 2023 - Present</span
-            >
+        <div class='w-full'>
+          <div class='flex flex-col md:flex-row items-start justify-between w-full mb-[10px] md:mb-0'>
+            <p class='text-[16px] text-black font-[500] leading-[22px]'>Geminine Studio</p>
+            <span class='text-xs text-light leading-[20px]'>August 2023 - Present</span>
           </div>
-          <p class="text-xs text-light leading-[20px]">
-            UX/UI Designer (Full time)
-          </p>
+          <p class='text-xs text-light leading-[20px]'>UX/UI Designer (Full time)</p>
         </div>
       </div>
     </div>
 
     <!-- Card 3: HARD SKILLS -->
     <div
-      id="hard-skills-card"
-      class="intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden"
+      id='hard-skills-card'
+      class='intro-card col-span-9 md:col-span-3 min-h-[300px] md:min-h-[400px] flex flex-col relative overflow-hidden'
     >
-      <div
-        class="flex justify-between items-start mb-8 relative z-10 pointer-events-none"
-      >
-        <h3 class="text-[20px] md:text-[24px] font-bold font-script">
-          HARD SKILLS
-        </h3>
+      <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>HARD SKILLS</h3>
       </div>
       <!-- Physics container for stacking tags -->
       <div
-        id="skills-physics-container"
-        class="absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none"
+        id='skills-physics-container'
+        class='absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none'
       >
         {
           HARD_SKILL.map((skill, index) => (
-            <div class="physics-item absolute" data-shape="pill">
-              <div
-                class={PILL_STYLE}
-                style={`background-color: ${pillColors[index % pillColors.length]};`}
-              >
+            <div class='physics-item absolute' data-shape='pill'>
+              <div class={PILL_STYLE} style={`background-color: ${pillColors[index % pillColors.length]};`}>
                 {skill}
               </div>
             </div>
@@ -235,27 +175,25 @@ const PILL_STYLE =
 
     <!-- Card 4: TOOLS -->
     <div
-      id="tools-card"
-      class="intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden"
+      id='tools-card'
+      class='intro-card col-span-9 md:col-span-3 min-h-[300px] md:min-h-[400px] flex flex-col relative overflow-hidden'
     >
-      <div
-        class="flex justify-between items-start mb-8 relative z-10 pointer-events-none"
-      >
-        <h3 class="text-[20px] md:text-[24px] font-bold font-script">TOOLS</h3>
+      <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>TOOLS</h3>
       </div>
       <div
-        id="tools-physics-container"
-        class="absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none"
+        id='tools-physics-container'
+        class='absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none'
       >
         {
           TOOLS.map((tool) => (
-            <div class="physics-item absolute" data-shape="rect">
-              <div class="bg-surface rounded-xl flex items-center justify-center shadow-sm w-[70px] h-[70px] cursor-grab active:cursor-grabbing pointer-events-auto overflow-hidden">
+            <div class='physics-item absolute' data-shape='rect'>
+              <div class='bg-surface rounded-xl flex items-center justify-center shadow-sm w-[70px] h-[70px] cursor-grab active:cursor-grabbing pointer-events-auto overflow-hidden'>
                 <Image
                   src={tool.icon}
                   class={`pointer-events-none select-none ${tool.imgClass}`}
                   alt={tool.name}
-                  draggable="false"
+                  draggable='false'
                 />
               </div>
             </div>
@@ -266,28 +204,21 @@ const PILL_STYLE =
 
     <!-- Card 5: SOFT SKILLS -->
     <div
-      id="soft-skills-card"
-      class="intro-card col-span-9 md:col-span-3 min-h-[384px] flex flex-col relative overflow-hidden"
+      id='soft-skills-card'
+      class='intro-card col-span-9 md:col-span-3 min-h-[300px] md:min-h-[400px] flex flex-col relative overflow-hidden'
     >
-      <div
-        class="flex justify-between items-start mb-8 relative z-10 pointer-events-none"
-      >
-        <h3 class="text-[20px] md:text-[24px] font-bold font-script">
-          SOFT SKILLS
-        </h3>
+      <div class='flex justify-between items-start mb-8 relative z-10 pointer-events-none'>
+        <h3 class='text-[20px] md:text-[24px] font-bold font-script'>SOFT SKILLS</h3>
       </div>
       <!-- Physics container for stacking tags -->
       <div
-        id="soft-skills-physics-container"
-        class="absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none"
+        id='soft-skills-physics-container'
+        class='absolute inset-0 z-0 opacity-0 transition-opacity duration-300 pointer-events-none'
       >
         {
           SOFT_SKILL.map((skill, index) => (
-            <div class="physics-item absolute" data-shape="pill">
-              <div
-                class={PILL_STYLE}
-                style={`background-color: ${pillColors[index % pillColors.length]};`}
-              >
+            <div class='physics-item absolute' data-shape='pill'>
+              <div class={PILL_STYLE} style={`background-color: ${pillColors[index % pillColors.length]};`}>
                 {skill}
               </div>
             </div>
@@ -299,7 +230,7 @@ const PILL_STYLE =
 </section>
 
 <script>
-  import Matter from "matter-js";
+  import Matter from 'matter-js';
 
   let activeRunners: Matter.Runner[] = [];
 
@@ -309,7 +240,7 @@ const PILL_STYLE =
   };
 
   // Handle physic content drop animation
-  document.addEventListener("astro:page-load", () => {
+  document.addEventListener('astro:page-load', () => {
     cleanupPhysics();
 
     const initPhysicsCard = (cardId: string, containerId: string) => {
@@ -325,7 +256,7 @@ const PILL_STYLE =
         hasInitialized = true;
 
         // Unhide container now that physics is about to take over
-        container.classList.remove("opacity-0");
+        container.classList.remove('opacity-0');
 
         const Engine = Matter.Engine,
           Runner = Matter.Runner,
@@ -345,68 +276,36 @@ const PILL_STYLE =
           render: { visible: false },
           friction: 0,
         };
-        const ground = Bodies.rectangle(
-          width / 2,
-          height + 500,
-          width * 3,
-          1000,
-          wallOptions,
-        );
-        const leftWall = Bodies.rectangle(
-          -500,
-          height / 2,
-          1000,
-          height * 3,
-          wallOptions,
-        );
-        const rightWall = Bodies.rectangle(
-          width + 500,
-          height / 2,
-          1000,
-          height * 3,
-          wallOptions,
-        );
-        const ceiling = Bodies.rectangle(
-          width / 2,
-          -500,
-          width * 3,
-          1000,
-          wallOptions,
-        );
+        const ground = Bodies.rectangle(width / 2, height + 500, width * 3, 1000, wallOptions);
+        const leftWall = Bodies.rectangle(-500, height / 2, 1000, height * 3, wallOptions);
+        const rightWall = Bodies.rectangle(width + 500, height / 2, 1000, height * 3, wallOptions);
+        const ceiling = Bodies.rectangle(width / 2, -500, width * 3, 1000, wallOptions);
 
         Composite.add(engine.world, [ground, leftWall, rightWall, ceiling]);
 
         // Get all DOM elements we want to simulate
-        const itemElements = Array.from(
-          container.querySelectorAll(".physics-item"),
-        );
+        const itemElements = Array.from(container.querySelectorAll('.physics-item'));
 
         // Create physical bodies based on DOM elements
         const bodies = itemElements.map((el: any, i: number) => {
           // Prepare element position origin
-          el.style.left = "0px";
-          el.style.top = "0px";
+          el.style.left = '0px';
+          el.style.top = '0px';
 
           const rect = el.getBoundingClientRect();
           const startX = width / 2 + (Math.random() - 0.5) * (width * 0.4);
           const startY = -rect.height - i * 60 - 20;
 
-          const isPill = el.getAttribute("data-shape") === "pill";
+          const isPill = el.getAttribute('data-shape') === 'pill';
           const chamferRadius = isPill ? rect.height / 2 : 12; // 12px for rounded-xl
 
-          const body = Bodies.rectangle(
-            startX,
-            startY,
-            rect.width,
-            rect.height,
-            {
-              restitution: 0.45,
-              friction: 0.1,
-              density: 0.002,
-              chamfer: { radius: chamferRadius },
-              render: { visible: false },
-            },
-          );
+          const body = Bodies.rectangle(startX, startY, rect.width, rect.height, {
+            restitution: 0.45,
+            friction: 0.1,
+            density: 0.002,
+            chamfer: { radius: chamferRadius },
+            render: { visible: false },
+          });
 
           Matter.Body.setAngle(body, (Math.random() - 0.5) * 0.4);
 
@@ -428,19 +327,10 @@ const PILL_STYLE =
 
         // Remove wheel listeners to allow normal page scrolling
         const mouseEvents = mouseConstraint.mouse as any;
-        mouseConstraint.mouse.element.removeEventListener(
-          "mousewheel",
-          mouseEvents.mousewheel,
-        );
-        mouseConstraint.mouse.element.removeEventListener(
-          "DOMMouseScroll",
-          mouseEvents.mousewheel,
-        );
-        mouseConstraint.mouse.element.removeEventListener(
-          "wheel",
-          mouseEvents.mousewheel,
-        );
-        mouse.element.style.touchAction = "auto"; // allow touch scroll on elements
+        mouseConstraint.mouse.element.removeEventListener('mousewheel', mouseEvents.mousewheel);
+        mouseConstraint.mouse.element.removeEventListener('DOMMouseScroll', mouseEvents.mousewheel);
+        mouseConstraint.mouse.element.removeEventListener('wheel', mouseEvents.mousewheel);
+        mouse.element.style.touchAction = 'auto'; // allow touch scroll on elements
 
         Composite.add(engine.world, mouseConstraint);
 
@@ -449,7 +339,7 @@ const PILL_STYLE =
         activeRunners.push(runner);
 
         // Update DOM transform to match physics engine
-        Matter.Events.on(engine, "afterUpdate", () => {
+        Matter.Events.on(engine, 'afterUpdate', () => {
           bodies.forEach((body) => {
             // Failsafe: if item flies completely out of massive bounds, reset it
             if (
@@ -479,13 +369,13 @@ const PILL_STYLE =
           Matter.Body.setPosition(rightWall, { x: newW + 500, y: newH / 2 });
         };
 
-        window.addEventListener("resize", handleResize);
+        window.addEventListener('resize', handleResize);
 
         // Custom cleanup for this card's specific elements/listeners
         document.addEventListener(
-          "astro:before-swap",
+          'astro:before-swap',
           () => {
-            window.removeEventListener("resize", handleResize);
+            window.removeEventListener('resize', handleResize);
           },
           { once: true },
         );
@@ -506,11 +396,11 @@ const PILL_STYLE =
     };
 
     // Initialize all 3 cards
-    initPhysicsCard("hard-skills-card", "skills-physics-container");
-    initPhysicsCard("tools-card", "tools-physics-container");
-    initPhysicsCard("soft-skills-card", "soft-skills-physics-container");
+    initPhysicsCard('hard-skills-card', 'skills-physics-container');
+    initPhysicsCard('tools-card', 'tools-physics-container');
+    initPhysicsCard('soft-skills-card', 'soft-skills-physics-container');
   });
 
   // Global cleanup when leaving the page
-  document.addEventListener("astro:before-swap", cleanupPhysics);
+  document.addEventListener('astro:before-swap', cleanupPhysics);
 </script>
