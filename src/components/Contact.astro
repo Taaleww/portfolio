@@ -52,12 +52,14 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
         class='absolute inset-0 w-full transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] block'
         style='transform: translateY(35%) rotate(0deg); transform-origin: center center;'
       >
-        <Image
-          src={contactCard}
-          alt="Contact Card - Let's Work Together"
-          class='w-full h-auto pointer-events-none select-none'
-          quality='high'
-        />
+        <div id="envelope-inner-wiggle" class="w-full h-full origin-bottom">
+          <Image
+            src={contactCard}
+            alt="Contact Card - Let's Work Together"
+            class='w-full h-auto pointer-events-none select-none'
+            quality='high'
+          />
+        </div>
       </a>
     </div>
   </div>
@@ -87,5 +89,19 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
   .envelope-container:hover #envelope-card,
   #envelope-wrapper:hover .envelope-container #envelope-card {
     transform: translateY(-10%) rotate(6deg) !important;
+  }
+
+  @keyframes peekAndWiggle {
+    0% { transform: rotate(0deg); }
+    15% { transform: rotate(-2deg); }
+    30% { transform: rotate(3deg); }
+    45% { transform: rotate(-2deg); }
+    60% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  /* When the wrapper scrolls into view, trigger the peek animation with a slight delay */
+  #envelope-wrapper.in-view #envelope-inner-wiggle {
+    animation: peekAndWiggle 0.8s ease-in-out 0.6s forwards;
   }
 </style>

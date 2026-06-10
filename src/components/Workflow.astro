@@ -68,7 +68,7 @@ const steps = [
     <!-- Cards Container with Responsive Overlap -->
     <div class="relative w-full max-w-[1400px] flex flex-wrap justify-center lg:flex-nowrap lg:px-4">
       {steps.map((step, index) => (
-        <div data-animate="fade-up" data-delay={index * 100} class="flex-shrink-0 lg:mb-0 lg:-mr-12 xl:-mr-10 relative mb-4 lg:mb-0" style={`z-index: ${index};`}>
+        <div data-animate="fade-up" data-delay={index * 100} class="card-wrapper flex-shrink-0 lg:mb-0 lg:-mr-12 xl:-mr-10 relative mb-4 lg:mb-0" style={`z-index: ${index};`}>
           <div 
             class="card-note relative p-6 xl:p-7 w-[280px] h-[280px] lg:w-[240px] lg:h-[240px] xl:w-[300px] xl:h-[300px] transition-all duration-300 cursor-default"
             style={`background-color: ${step.color}; --base-rotation: ${step.rotation}; --mobile-rotation: ${step.mobile_rotation}; --base-y: ${step.yOffset};`}
@@ -105,9 +105,12 @@ const steps = [
     }
   }
 
-  .card-note:hover {
-    transform: rotate(0deg) translateY(0px) scale(1.1) !important;
+  .card-wrapper:hover {
     z-index: 100 !important;
+  }
+
+  .card-wrapper:hover .card-note {
+    transform: rotate(0deg) translateY(0px) scale(1.1) !important;
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.12);
   }
 </style>
