@@ -1,5 +1,5 @@
-import Image from 'astro/components/Image.astro';
 import React from 'react';
+import ProjectCard from './ProjectCard';
 
 interface Project {
   title: string;
@@ -75,53 +75,14 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
           {/* Project Grid */}
           <div className='grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 lg:gap-y-20 lg:gap-x-20'>
             {projects.map((project, index) => (
-              <a
-                href={`/portfolio/projects/${project.slug}`}
-                key={project.client}
-                data-animate='fade-up'
-                data-delay={(index % 2) * 100}
-                className='group cursor-pointer flex flex-col min-w-0'>
-                {/* Image Container */}
-                <div
-                  className='aspect-[1.4/1] rounded-[24px] overflow-hidden shadow-sm border-[4px] border-white transition-transform duration-500 group-hover:-translate-y-2 mb-4 bg-gray-100'
-                  style={{ boxShadow: '0px 0px 10px 0px #00000040' }}>
-                  <img
-                    src={typeof project.image === 'string' ? project.image : project.image.src}
-                    alt={project.client}
-                    className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-105'
-                  />
-                </div>
-
-                {/* Text Container */}
-                <div className='space-y-1 pl-1 flex flex-col min-w-0'>
-                  <div className='flex items-start space-x-2 min-w-0'>
-                    <h3 className='text-[18px] md:text-[24px] font-bold text-black truncate shrink'>{project.title}</h3>
-                    <svg
-                      width='44'
-                      height='20'
-                      viewBox='0 0 44 20'
-                      fill='none'
-                      xmlns='http://www.w3.org/2000/svg'
-                      className='w-[24px] h-[24px] mt-1 shrink-0'>
-                      <path
-                        d='M1.50012 11.0216C7.23486 10.3883 15.2217 10.2694 21.3176 10.0119C29.2377 9.8674 34.8663 9.86505 35.8906 9.95062C36.4065 9.97971 36.9148 9.97971 38.4653 10.1508'
-                        stroke='black'
-                        strokeWidth='3'
-                        strokeLinecap='round'
-                      />
-                      <path
-                        d='M30.6796 1.5C31.5832 2.57473 36.0156 6.55533 39.8199 8.99401C40.9468 9.71634 42.8507 10.2142 41.5265 11.5799C40.2022 12.9455 35.6917 14.9786 33.1682 16.1671C30.6448 17.3557 30.2451 17.638 28.9683 18.2712'
-                        stroke='black'
-                        strokeWidth='3'
-                        strokeLinecap='round'
-                      />
-                    </svg>
-                  </div>
-                  <div className='text-[16px] md:text-[18px] font-[400] text-[#5D5D5D] truncate'>
-                    {project.category}
-                  </div>
-                </div>
-              </a>
+              <ProjectCard
+                key={project.slug}
+                slug={project.slug}
+                title={project.title}
+                category={project.category}
+                image={project.image}
+                animateDelay={(index % 2) * 100}
+              />
             ))}
           </div>
         </div>
