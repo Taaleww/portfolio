@@ -72,28 +72,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {/* Text Container */}
       <div className={['space-y-1 pl-1 flex flex-col min-w-0', isRelated ? 'md:max-w-[400px]' : ''].join(' ')}>
         <div className={['flex items-start min-w-0', isRelated ? 'space-x-4' : 'space-x-2'].join(' ')}>
-          <h3
-            className={[
-              'font-bold text-black truncate shrink',
-              isRelated ? 'text-[24px]' : 'text-[18px] md:text-[24px]',
-            ].join(' ')}>
-            {title}
-          </h3>
-          <ArrowSvg
-            className={
-              isRelated
-                ? 'shrink-0' // original had min-w-[40px] mt-[8px]
-                : 'w-[24px] h-[24px] mt-1 shrink-0'
-            }
-          />
+          <h3 className={['font-bold text-black truncate min-w-0 text-[18px] md:text-[24px]'].join(' ')}>{title}</h3>
+          <ArrowSvg className={'w-[24px] h-[24px] md:w-[40px] md:h-[24px] md:mt-2 shrink-0'} />
         </div>
-        <div
-          className={[
-            'font-[400] text-[#5D5D5D] truncate',
-            isRelated ? 'text-[18px]' : 'text-[16px] md:text-[18px]',
-          ].join(' ')}>
-          {category}
-        </div>
+        <div className={['font-[400] text-[#5D5D5D] truncate text-[16px] md:text-[18px]'].join(' ')}>{category}</div>
       </div>
     </a>
   );
