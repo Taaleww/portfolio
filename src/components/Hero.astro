@@ -1,158 +1,131 @@
 ---
-import { Image } from "astro:assets";
-import bgHero from "../assets/bg-hero.jpg";
-import nameHero from "../assets/name-hero.svg";
-import hover01 from "../assets/hover/hover-01.png";
-import hover02 from "../assets/hover/hover-02.png";
-import hover03 from "../assets/hover/hover-03.png";
-import hover04 from "../assets/hover/hover-04.png";
-import hover05 from "../assets/hover/hover-05.png";
+import { Image } from 'astro:assets';
+import bgHero from '../assets/bg-hero.jpg';
+import nameHero from '../assets/name-hero.svg';
+import hover01 from '../assets/hover/hover-01.png';
+import hover02 from '../assets/hover/hover-02.png';
+import hover03 from '../assets/hover/hover-03.png';
+import hover04 from '../assets/hover/hover-04.png';
+import hover05 from '../assets/hover/hover-05.png';
 ---
 
 <section
-  id="hero-section"
-  class="relative min-h-screen flex flex-col justify-end pb-5 lg:pb-6 px-[20px] lg:px-[40px] overflow-hidden"
+  id='hero-section'
+  class='relative min-h-screen flex flex-col justify-end pb-5 lg:pb-6 px-[20px] lg:px-[40px] overflow-hidden'
 >
   <!-- Background Image -->
-  <div class="absolute inset-0 -z-10 bg-white">
-    <div id="hero-parallax" class="absolute inset-0 will-change-transform hero-bg-reveal">
+  <div class='absolute inset-0 -z-10 bg-white'>
+    <div id='hero-parallax' class='absolute inset-0 will-change-transform hero-bg-reveal'>
       <Image
         src={bgHero}
-        alt="Hero Background"
-        class="w-full h-full object-cover scale-[1.5] absolute top-[20%] left-[25%]"
-        quality="high"
+        alt='Hero Background'
+        class='w-full h-full object-cover scale-[1.5] absolute top-[20%] left-[25%]'
+        quality='high'
       />
     </div>
     <!-- Gradient overlay -->
-    <div
-      class="absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent"
-    >
-    </div>
+    <div class='absolute inset-0 bg-gradient-to-t from-white/40 via-transparent to-transparent'></div>
   </div>
 
-  <div class="flex flex-col items-start">
-    <div
-      class="flex flex-col items-end gap-[62px] w-full mb-[32px] md:mb-[52px]"
-    >
+  <div class='flex flex-col items-start'>
+    <div class='flex flex-col items-end gap-[62px] w-full mb-[32px] md:mb-[52px]'>
       <!-- Top-right specialty text — slides in from right -->
-      <div class="flex justify-end">
+      <div class='flex justify-end'>
         <div
-          class="flex flex-col space-y-2 text-left text-[16px] lg:text-[24px] font-[400] text-black mr-[5dvw] lg:mr-[10dvw] font-script"
+          class='flex flex-col space-y-2 text-left text-[16px] lg:text-[24px] font-[400] text-black mr-[5dvw] lg:mr-[10dvw] font-script'
         >
-          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.05s">UX/UI Designer</a>
-          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.15s">Wireframing &amp; Prototyping</a>
-          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.25s">Design Skill</a>
-          <a class="hover:text-black transition-colors hero-slide-right" style="animation-delay: 0.35s">Basic Coding</a>
+          <a class='hover:text-black transition-colors hero-slide-right' style='animation-delay: 0.05s'
+            >UX/UI Designer</a
+          >
+          <a class='hover:text-black transition-colors hero-slide-right' style='animation-delay: 0.15s'
+            >Wireframing &amp; Prototyping</a
+          >
+          <a class='hover:text-black transition-colors hero-slide-right' style='animation-delay: 0.25s'>Design Skill</a>
+          <a class='hover:text-black transition-colors hero-slide-right' style='animation-delay: 0.35s'>Basic Coding</a>
         </div>
       </div>
 
       <!-- Bottom-left meta — slides up -->
-      <div class="w-full items-start space-y-2">
-        <div class="text-[16px] lg:text-[24px] font-[400] text-black hero-slide-up" style="animation-delay: 0.1s">
+      <div class='w-full items-start space-y-2'>
+        <div class='text-[16px] lg:text-[24px] font-[400] text-black hero-slide-up' style='animation-delay: 0.1s'>
           ©2026
         </div>
         <p
-          class="text-[16px] lg:text-[24px] font-[400] leading-[160%] text-black max-w-[620px] hero-slide-up"
-          style="animation-delay: 0.25s"
+          class='text-[16px] lg:text-[24px] font-[400] leading-[160%] text-black max-w-[620px] hero-slide-up'
+          style='animation-delay: 0.25s'
         >
-          Designing intuitive digital experiences through thoughtful UX and
-          clean interfaces.
+          Designing intuitive digital experiences through thoughtful UX and clean interfaces.
         </p>
       </div>
     </div>
 
     <div>
       <h1
-        class="text-[14.2dvw] tracking-tighter text-black select-none leading-none !h-min flex items-end gap-0 overflow-visible"
-        style="color: rgba(0, 0, 0); letter-spacing: 1%;"
+        class='text-[14.2dvw] tracking-tighter text-black select-none leading-none !h-min flex items-end gap-0 overflow-visible'
+        style='color: rgba(0, 0, 0); letter-spacing: 1%;'
       >
         <!-- Na -->
         <div
-          class="relative group ml-[-1dvw] leading-[75%] cursor-pointer overflow-visible hero-letter"
-          style="animation-delay: 0.15s"
+          class='relative group ml-[-1dvw] leading-[75%] cursor-pointer overflow-visible hero-letter'
+          style='animation-delay: 0.15s'
         >
-          <span class="relative z-10">Na</span>
+          <span class='relative z-10'>Na</span>
           <div
-            class="overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] object-cover opacity-0 translate-y-40 group-hover:opacity-100 group-hover:translate-y-[-96px] transition-all duration-500 ease-out pointer-events-none z-30"
+            class='overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 w-[160%] h-[160%] opacity-0 translate-y-[20%] group-hover:opacity-100 group-hover:-translate-y-[70%] transition-all duration-500 ease-out pointer-events-none z-30'
           >
-            <Image
-              src={hover01}
-              alt="Na hover"
-              class="w-full h-full object-contain mt-[-50px]"
-              quality="high"
-            />
+            <Image src={hover01} alt='Na hover' class='w-full h-full object-contain' quality='high' />
           </div>
         </div>
 
         <!-- nt -->
         <div
-          class="relative group leading-[75%] cursor-pointer overflow-visible hero-letter"
-          style="animation-delay: 0.23s"
+          class='relative group leading-[75%] cursor-pointer overflow-visible hero-letter'
+          style='animation-delay: 0.23s'
         >
-          <span class="relative z-10">nt</span>
+          <span class='relative z-10'>nt</span>
           <div
-            class="overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] h-[100%] object-cover opacity-0 translate-y-40 group-hover:opacity-100 group-hover:translate-y-[-60px] transition-all duration-500 ease-out pointer-events-none z-30"
+            class='overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 w-[100%] h-[100%] opacity-0 translate-y-[20%] group-hover:opacity-100 group-hover:-translate-y-[60%] transition-all duration-500 ease-out pointer-events-none z-30'
           >
-            <Image
-              src={hover02}
-              alt="nt hover"
-              class="w-full h-full object-contain"
-              quality="high"
-            />
+            <Image src={hover02} alt='nt hover' class='w-full h-full object-contain' quality='high' />
           </div>
         </div>
 
         <!-- ha -->
         <div
-          class="relative group leading-[75%] cursor-pointer overflow-visible hero-letter"
-          style="animation-delay: 0.31s"
+          class='relative group leading-[75%] cursor-pointer overflow-visible hero-letter'
+          style='animation-delay: 0.31s'
         >
-          <span class="relative z-10">ha</span>
+          <span class='relative z-10'>ha</span>
           <div
-            class="overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] object-cover opacity-0 translate-y-40 group-hover:opacity-100 group-hover:translate-y-[-96px] transition-all duration-500 ease-out pointer-events-none z-30"
+            class='overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 w-[160%] h-[160%] opacity-0 translate-y-[20%] group-hover:opacity-100 group-hover:-translate-y-[70%] transition-all duration-500 ease-out pointer-events-none z-30'
           >
-            <Image
-              src={hover03}
-              alt="ha hover"
-              class="w-full h-full object-contain mt-[-40px]"
-              quality="high"
-            />
+            <Image src={hover03} alt='ha hover' class='w-full h-full object-contain' quality='high' />
           </div>
         </div>
 
         <!-- kan -->
         <div
-          class="relative group leading-[75%] cursor-pointer overflow-visible hero-letter"
-          style="animation-delay: 0.39s"
+          class='relative group leading-[75%] cursor-pointer overflow-visible hero-letter'
+          style='animation-delay: 0.39s'
         >
-          <span class="relative z-10">kan</span>
+          <span class='relative z-10'>kan</span>
           <div
-            class="overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] object-cover opacity-0 translate-y-40 group-hover:opacity-100 group-hover:translate-y-[-96px] transition-all duration-500 ease-out pointer-events-none z-30"
+            class='overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 w-[160%] h-[160%] opacity-0 translate-y-[20%] group-hover:opacity-100 group-hover:-translate-y-[70%] transition-all duration-500 ease-out pointer-events-none z-30'
           >
-            <Image
-              src={hover04}
-              alt="kan hover"
-              class="w-full h-full object-contain mt-[-50px]"
-              quality="high"
-            />
+            <Image src={hover04} alt='kan hover' class='w-full h-full object-contain' quality='high' />
           </div>
         </div>
 
         <!-- R. -->
         <div
-          class="relative group ml-[3dvw] md:ml-[5dvw] lg:ml-[6dvw] leading-[75%] cursor-pointer overflow-visible hero-letter"
-          style="animation-delay: 0.47s"
+          class='relative group ml-[3dvw] md:ml-[5dvw] lg:ml-[6dvw] leading-[75%] cursor-pointer overflow-visible hero-letter'
+          style='animation-delay: 0.47s'
         >
-          <span class="relative z-10">R.</span>
+          <span class='relative z-10'>R.</span>
           <div
-            class="overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] object-cover opacity-0 translate-y-40 group-hover:opacity-100 group-hover:translate-y-[-96px] transition-all duration-500 ease-out pointer-events-none z-30"
+            class='overflow-visible absolute left-1/2 top-1/2 -translate-x-1/2 w-[160%] h-[160%] opacity-0 translate-y-[20%] group-hover:opacity-100 group-hover:-translate-y-[60%] transition-all duration-500 ease-out pointer-events-none z-30'
           >
-            <Image
-              src={hover05}
-              alt="R. hover"
-              class="w-full h-full object-contain mt-[-40px]"
-              quality="high"
-            />
+            <Image src={hover05} alt='R. hover' class='w-full h-full object-contain' quality='high' />
           </div>
         </div>
       </h1>
@@ -255,8 +228,8 @@ import hover05 from "../assets/hover/hover-05.png";
 
     section.addEventListener('mousemove', (e) => {
       const rect = section.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width - 0.5);
-      const y = ((e.clientY - rect.top) / rect.height - 0.5);
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
       targetX = x * -18;
       targetY = y * -10;
     });
@@ -269,9 +242,13 @@ import hover05 from "../assets/hover/hover-05.png";
     rafId = requestAnimationFrame(tick);
 
     // Cleanup on view transition
-    document.addEventListener('astro:before-swap', () => {
-      cancelAnimationFrame(rafId);
-    }, { once: true });
+    document.addEventListener(
+      'astro:before-swap',
+      () => {
+        cancelAnimationFrame(rafId);
+      },
+      { once: true },
+    );
   }
 
   document.addEventListener('astro:page-load', initHeroParallax);
