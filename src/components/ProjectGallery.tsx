@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectCard from './ProjectCard';
+import circleDraw from '../assets/circleDraw.png';
 
 interface Project {
   title: string;
@@ -31,22 +32,11 @@ const ProjectGallery: React.FC<Props> = ({ projects }) => {
               <span className='relative inline-block mx-1'>
                 <span className='z-10 relative'>explore</span>
                 {/* Cyan hand-drawn style circle behind "explore" */}
-                <div className='absolute top-1/8 md:top-1/4 block z-0'>
-                  <svg
-                    width='98'
-                    height='31'
-                    viewBox='0 0 98 31'
-                    fill='none'
-                    xmlns='http://www.w3.org/2000/svg'
-                    className='w-[110%]'>
-                    <path
-                      d='M59.6944 3.55713C45.5469 3.7815 31.3994 4.00588 23.3686 4.39947C11.1321 4.99919 7.30602 9.44464 4.75016 12.4965C2.48445 15.2019 1.61571 19.2268 1.50094 22.4706C1.47554 23.1885 1.96871 23.6754 2.49319 24.1676C3.01766 24.6599 3.74531 25.107 9.11461 26.1112C14.4839 27.1154 24.4728 28.663 36.0484 29.2376C47.6239 29.8122 60.4834 29.3667 69.3615 28.6389C78.2396 27.9111 82.7466 26.9146 85.8326 26.0073C93.1103 23.8676 95.1669 20.5396 96.0056 19.0603C96.4287 18.314 96.6364 17.3549 96.4022 15.9098C96.1679 14.4647 95.4317 12.506 93.6968 10.8393C91.9619 9.17272 89.2507 7.8576 84.3 6.39235C79.3492 4.92709 72.2412 3.35157 67.6091 2.50226C62.9771 1.65296 61.0363 1.57762 59.0367 1.5'
-                      stroke='#8AE2E6'
-                      strokeWidth='3'
-                      strokeLinecap='round'
-                    />
-                  </svg>
-                </div>
+                   <img
+                  src={circleDraw.src}
+                  alt='circle draw'
+                  className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 block z-0 w-[100%] md:w-[220px]  max-w-[110px] pointer-events-none'
+                />
               </span>
               <span className='z-11 ml-1'>my</span>
             </div>
