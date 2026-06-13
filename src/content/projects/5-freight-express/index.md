@@ -15,7 +15,7 @@ challenges: "The challenge was to present complex logistics and import-export se
 solutions: "Designed a modern and structured website with clear service categorization, intuitive navigation, and professional visual communication to simplify logistics information and improve the customer journey."
 outcome: "Delivered a professional digital platform that strengthens brand credibility, enhances service accessibility, and creates a more seamless experience for businesses seeking logistics and freight solutions."
 heroMockup: "./cover.png"
-otherImages: ["./other-images/1.png"]
+otherImages: ["./other-images/1.png" , "./other-images/2.png"]
 ---
 
 ## Project Overview

@@ -21,8 +21,8 @@ const projectsCollection = defineCollection({
       challenges: z.string().optional(),
       solutions: z.string().optional(),
       outcome: z.string().optional(),
-      heroMockup: image().optional(),
-      otherImages: z.array(image()).optional(),
+      heroMockup: z.union([image(), z.string()]).optional(),
+      otherImages: z.array(z.union([image(), z.string()])).optional(),
     }),
 });
 

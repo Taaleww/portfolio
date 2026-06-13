@@ -15,7 +15,7 @@ challenges: "The challenge was to present home design and construction services 
 solutions: "Designed a modern and elegant website with clean layouts, strong visual storytelling, and intuitive navigation to highlight projects, services, and the overall brand experience."
 outcome: "Delivered a polished digital platform that strengthens brand credibility, improves project presentation, and creates a more engaging experience for potential homeowners and clients."
 heroMockup: "./cover.png"
-otherImages: ["./other-images/1.png", "./other-images/2.png", "./other-images/3.png", "./other-images/4.png"]
+otherImages: ["./other-images/1.png", "./other-images/2.png", "./other-images/3.png", "./other-images/4.png" , "./other-images/5.png"]
 ---
 
 ## Project Overview
