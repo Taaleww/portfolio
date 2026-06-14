@@ -34,7 +34,9 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
           src={circleDraw}
           alt='circle draw'
           class='absolute top-[60%] left-1/2 w-[140%] min-w-[110px] h-auto max-w-none -translate-x-1/2 -translate-y-1/2 -z-10 pointer-events-none'
-          quality='high'
+          width={500}
+          quality={80}
+          loading='eager'
         />
       </span>
       <span>:)</span>
@@ -62,7 +64,10 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
             src={contactCard}
             alt="Contact Card - Let's Work Together"
             class='w-full h-auto pointer-events-none select-none'
-            quality='high'
+            width={1800}
+            quality={90}
+            loading='eager'
+            fetchpriority='high'
           />
         </div>
       </a>
@@ -76,14 +81,17 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
     data-animate='fade-up'
   >
     <!-- The envelope container - clips the card -->
-    <div class='envelope-container relative w-full'>
+    <div class='envelope-container relative w-full' style='min-height: 300px; border-radius: 20px;'>
       <!-- Card image that slides up on hover -->
-      <a href='mailto:nantakarn.1.01@gmail.com' id='envelope-card-mobile' class='absolute w-full block'>
+      <a href='mailto:nantakarn.1.01@gmail.com' id='envelope-card-mobile' class='relative w-full block'>
         <Image
           src={contactCardMobile}
           alt="Contact Card - Let's Work Together"
           class='w-full h-auto pointer-events-none select-none pb-[68px]'
-          quality='high'
+          width={1200}
+          quality={90}
+          loading='eager'
+          fetchpriority='high'
         />
       </a>
     </div>
@@ -93,7 +101,7 @@ import contactCardMobile from '../assets/contact-card-mobile.png';
 <style>
   .envelope-container:hover #envelope-card,
   #envelope-wrapper:hover .envelope-container #envelope-card {
-    transform: translateY(-10%) rotate(6deg) !important;
+    transform: translateX(-1%) translateY(-15%) rotate(5deg) !important;
   }
 
   @keyframes peekAndWiggle {
