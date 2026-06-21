@@ -1,5 +1,5 @@
 ---
-title: "ICE Oracle netsuite"
+title: "iCE Oracle NetSuite"
 category: "Oracle netsuite"
 description: "A corporate website crafted to showcase cloud-based ERP expertise and digital business solutions."
 image: "./cover.png"
@@ -10,7 +10,7 @@ techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
 order: 2
 client: "iCE Consulting Co., Ltd. "
-service: "Web Design"
+service: "UX/UI Designer"
 challenges: "The challenge was to present complex ERP and cloud-based business solutions in a way that feels clear, trustworthy, and easy to understand for enterprise users.          "
 solutions: "Designed a clean and structured corporate website with clear information hierarchy, intuitive navigation, and modern UI elements to simplify complex content and improve the overall user journey."
 outcome: "Delivered a professional and scalable digital experience that strengthens brand credibility, improves user engagement, and supports business conversion through a more accessible and user-friendly platform."
