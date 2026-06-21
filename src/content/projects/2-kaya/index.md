@@ -1,7 +1,7 @@
 ---
 title: "Kaya Inter"
 category: "Home construction"
-description: "A home design and construction company website crafted to showcase quality craftsmanship and modern living."
+description: "A home design and construction company."
 image: "./cover.png"
 overviewImage: "./overview.png"
 liveUrl: "https://kaya-inter.com/en/"
@@ -10,7 +10,7 @@ techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
 order: 2
 client: "Kaya Inter Co., Ltd."
-service: "Web Designs"
+service: "UX/UI Designer"
 challenges: "The challenge was to present home design and construction services in a way that feels both professional and visually inspiring while clearly communicating the company’s expertise and craftsmanship."
 solutions: "Designed a modern and elegant website with clean layouts, strong visual storytelling, and intuitive navigation to highlight projects, services, and the overall brand experience."
 outcome: "Delivered a polished digital platform that strengthens brand credibility, improves project presentation, and creates a more engaging experience for potential homeowners and clients."
