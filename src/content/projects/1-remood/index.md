@@ -8,7 +8,7 @@ liveUrl: "https://remood.co.th/?gad_source=1&gad_campaignid=22247182761&gbraid=0
 repoUrl: "https://github.com/user/project-alpha"
 techStack: ["Astro", "Tailwind CSS", "React"]
 featured: true
-order: 1
+order: 3
 client: "Remood Co., Ltd."
 service: "UX/UI Designer"
 challenges: The challenge was to design a visually engaging website that showcases a wide variety of interior and exterior materials while maintaining a clean and easy to navigate user experience.

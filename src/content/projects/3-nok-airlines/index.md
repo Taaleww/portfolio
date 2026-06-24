@@ -8,7 +8,7 @@ liveUrl: "https://nokdeal.nokair.com/login"
 repoUrl: "https://github.com/user/project-gamma"
 techStack: ["Vue.js", "Tailwind CSS", "Strapi"]
 featured: true
-order: 3
+order: 1
 client: "Nok Airlines Public Company Limited"
 service: "UX/UI Designer"
 challenges: "The challenge was to create a seamless rewards platform that makes point redemption simple, engaging, and easy to navigate while managing various deals, privileges, and member benefits. "

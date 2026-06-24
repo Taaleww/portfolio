@@ -8,7 +8,7 @@ liveUrl: "https://fei.co.th/en/"
 repoUrl: "https://github.com/user/project-beta"
 techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
-order: 2
+order: 5
 client: "Freight Express International Co., Ltd."
 service: "UX/UI Designer"
 challenges: "The challenge was to present complex logistics and import-export services in a way that feels clear, trustworthy, and accessible for both corporate clients and new entrepreneurs."

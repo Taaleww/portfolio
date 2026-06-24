@@ -8,7 +8,7 @@ liveUrl: "https://oracle-netsuite.iceconsulting.co.th/"
 repoUrl: "https://github.com/user/project-beta"
 techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
-order: 2
+order: 4
 client: "iCE Consulting Co., Ltd. "
 service: "UX/UI Designer"
 challenges: "The challenge was to present complex ERP and cloud-based business solutions in a way that feels clear, trustworthy, and easy to understand for enterprise users.          "
