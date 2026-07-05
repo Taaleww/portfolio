@@ -5,6 +5,7 @@ import circleDraw from '../../assets/circleDraw.png';
 import ProjectLayout from '../../layouts/ProjectLayout.astro';
 import Contact from '../../components/Contact.astro';
 import ProjectCard from '../../components/ProjectCard';
+import Lightbox from '../../components/Lightbox.astro';
 
 export async function getStaticPaths() {
   const projects = await getCollection('projects');
@@ -99,9 +100,15 @@ const otherProjects = allProjects
           >
             {
               heroMockup ? (
-                <Image src={heroMockup} alt={`${title} Mockup`} class='w-full h-full object-cover' />
+                typeof heroMockup === 'string' ? (
+                  <img src={heroMockup} alt={`${title} Mockup`} class='w-full h-full object-cover' />
+                ) : (
+                  <Image src={heroMockup} alt={`${title} Mockup`} class='w-full h-full object-cover' />
+                )
+              ) : typeof image === 'string' ? (
+                <img src={image} alt={title} class='w-full h-full object-cover' />
               ) : (
-                <Image src={image as any} alt={title} class='w-full h-full object-cover' />
+                <Image src={image} alt={title} class='w-full h-full object-cover' />
               )
             }
           </div>
@@ -148,8 +155,12 @@ const otherProjects = allProjects
       {
         overviewImage && (
           <section class='mb-[60px] md:mb-[100px]' data-animate='scale-up'>
-            <div class='rounded-[16px] md:rounded-[16px] bg-white shadow-sm overflow-hidden'>
-              <Image src={overviewImage as any} alt='Desktop Screen' class='w-full' />
+            <div class='rounded-[16px] md:rounded-[16px] bg-white shadow-sm overflow-hidden cursor-zoom-in lightbox-trigger'>
+              {typeof overviewImage === 'string' ? (
+                <img src={overviewImage} alt='Desktop Screen' class='w-full' />
+              ) : (
+                <Image src={overviewImage} alt='Desktop Screen' class='w-full' />
+              )}
             </div>
           </section>
         )
@@ -205,14 +216,20 @@ const otherProjects = allProjects
         </div>
       </section>
 
-      <!-- Mobile & Phone Mockups -->
+      <!-- Other images section -->
       <section class='mb-[80px] md:mb-[160px]'>
         {
           otherImages && otherImages.length > 0 && (
             <div class='flex flex-col gap-6 md:gap-6'>
               {otherImages.map((mockup: any, index: number) => (
                 <div data-animate='fade-up' data-delay={index % 2 === 0 ? '100' : '200'}>
-                  <Image src={mockup} alt='Mobile Screen' class='rounded-[16px] md:rounded-[16px] w-full' />
+                  <div class='rounded-[16px] md:rounded-[16px] overflow-hidden cursor-zoom-in lightbox-trigger shadow-sm'>
+                    {typeof mockup === 'string' ? (
+                      <img src={mockup} alt='Mobile Screen' class='w-full' />
+                    ) : (
+                      <Image src={mockup} alt='Mobile Screen' class='w-full' />
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
@@ -315,6 +332,9 @@ const otherProjects = allProjects
       </section>
     </article>
   </div>
+
+  <!-- Lightbox modal -->
+  <Lightbox />
 </ProjectLayout>
 
 <style>
@@ -325,5 +345,24 @@ const otherProjects = allProjects
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+
+  /* zoom component */
+  .lightbox-trigger {
+    transition: box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lightbox-trigger img {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .lightbox-trigger:hover img {
+    transform: scale(1.035);
+  }
+
+  .lightbox-trigger:hover {
+    box-shadow:
+      0 20px 25px -5px rgba(0, 0, 0, 0.05),
+      0 8px 10px -6px rgba(0, 0, 0, 0.05);
   }
 </style>
