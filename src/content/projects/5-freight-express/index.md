@@ -10,12 +10,12 @@ techStack: ["Next.js", "D3.js", "TypeScript"]
 featured: false
 order: 5
 client: "Freight Express International Co., Ltd."
-service: "UX/UI Designer"
+service: "UX/UI Designer<br/> Developer Handoff"
 challenges: "The challenge was to present complex logistics and import-export services in a way that feels clear, trustworthy, and accessible for both corporate clients and new entrepreneurs."
 solutions: "Designed a modern and structured website with clear service categorization, intuitive navigation, and professional visual communication to simplify logistics information and improve the customer journey."
 outcome: "Delivered a professional digital platform that strengthens brand credibility, enhances service accessibility, and creates a more seamless experience for businesses seeking logistics and freight solutions."
 heroMockup: "./cover.png"
-otherImages: ["./other-images/1.png" , "./other-images/2.png"]
+otherImages: ["./other-images/2.png" , "./other-images/1.png"]
 ---
 
 ## Project Overview
