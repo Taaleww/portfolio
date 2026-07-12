@@ -10,12 +10,12 @@ techStack: ["Astro", "Tailwind CSS", "React"]
 featured: true
 order: 3
 client: "Remood Co., Ltd."
-service: "UX/UI Designer"
+service: "UX/UI Designer<br/> Developer Handoff"
 challenges: The challenge was to design a visually engaging website that showcases a wide variety of interior and exterior materials while maintaining a clean and easy to navigate user experience.
 solutions: "Designed a modern and visually driven interface with strong visual hierarchy, organized product presentation, and intuitive navigation to help users explore materials and design inspirations seamlessly."
 outcome: "Delivered a refined digital experience that elevates brand perception, drives product discoverability, and delivers a more seamless and inspiring customer journey. Designed experience with clean, premium interface for product exploration & business credibility."
 heroMockup: "./cover.png"
-otherImages: ["./other-images/1.png", "./other-images/2.png", "./other-images/3.png" , "./other-images/4.png"]
+otherImages: ["./other-images/4.png", "./other-images/1.png", "./other-images/2.png", "./other-images/3.png" , ]
 ---
 
 ## Project Overview
